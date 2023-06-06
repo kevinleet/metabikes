@@ -9,6 +9,11 @@ const getBikes = async (req, res) => {
         const bikes = await Bike.find({});
         res.json(bikes);
     }
+
+    // let bikes = await Bike.find({});
+    // bikes = req.query.type ? (bikes = await bikes.find({ type: type })) : bikes;
+
+    // res.json(bikes);
 };
 
 const getBikeById = async (req, res) => {
