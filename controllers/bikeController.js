@@ -1,19 +1,32 @@
 const { Bike } = require("../models");
 
 const getBikes = async (req, res) => {
-    if (req.query.type) {
-        const type = req.query.type;
-        const bikes = await Bike.find({ type: type });
-        res.json(bikes);
+    let bikes;
+
+    if (req.query.type && req.query.sort) {
+        if (req.query.sort === "asc") {
+            bikes = await Bike.find({ type: req.query.type }).sort({
+                price: 1,
+            });
+        } else if (req.query.sort === "desc") {
+            bikes = await Bike.find({ type: req.query.type }).sort({
+                price: -1,
+            });
+        }
+    } else if (req.query.sort === "asc") {
+        bikes = await Bike.find({}).sort({
+            price: 1,
+        });
+    } else if (req.query.sort === "desc") {
+        bikes = await Bike.find({}).sort({
+            price: -1,
+        });
+    } else if (req.query.type) {
+        bikes = await Bike.find({ type: req.query.type });
     } else {
-        const bikes = await Bike.find({});
-        res.json(bikes);
+        bikes = await Bike.find({});
     }
-
-    // let bikes = await Bike.find({});
-    // bikes = req.query.type ? (bikes = await bikes.find({ type: type })) : bikes;
-
-    // res.json(bikes);
+    res.json(bikes);
 };
 
 const getBikeById = async (req, res) => {
