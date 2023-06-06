@@ -1,5 +1,5 @@
 const express = require('express')
-const routes = require('./routes')
+const Router = require('./routes/AppRouter')
 const logger = require('morgan')
 const db = require('./db')
 
@@ -9,6 +9,9 @@ const app = express()
 app.use(express.json())
 app.use(logger('dev'))
 
-// app.use('/api', routes)
+// app.use('/api', Router)
+
+app.use('/', express.static('client'))
+app.use('*', express.static('client'))
 
 app.listen(PORT, () => console.log(`Application is listening on port ${PORT}.`))
