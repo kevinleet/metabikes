@@ -1,9 +1,8 @@
-const mongoose = require('mongoose')
-const bikeSchema = require('./bike')
+const mongoose = require("mongoose");
+const bikeSchema = require("./bike");
+const accessorySchema = require("./accessory");
 
+const Bike = mongoose.model("Bike", bikeSchema);
+const Accessory = mongoose.model("Accessory", accessorySchema);
 
-
-const Bike = mongoose.model('Bike', bikeSchema)
-
-
-module.export = {Bike}
+module.exports = { Bike, Accessory };
