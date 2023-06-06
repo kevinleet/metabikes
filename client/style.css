@@ -81,12 +81,32 @@ body {
     margin: 0 auto;
     width: 80%;
     height: 500px;
-    border: 1px solid black;
-    display: grid;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-container img {
+    height: 90%;
+    margin: 2%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-container div {
+    margin-left: 30px;
+    width: 500px;
+    text-align: center;
+    /* border: 1px solid black; */
 }
 
 .main-container p {
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6em;
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
 }
 
 .footer {
@@ -108,4 +128,5 @@ body {
     margin: 0;
     color: rgb(248, 248, 248);
     font-size: 0.8em;
+    font-family: 'Nunito', sans-serif;
 }
