@@ -4,9 +4,9 @@ const bikeSchema = new Schema (
     {
         type: {type: String, require: true},
         brand: {type: String, require: true},
-        price: {type: String, require: true},
+        price: {type: Number, require: true},
         quantity: {type: Number, require: true},
-        frame_size: {type: String, require: true}
+        frame_size: {type: Number, require: true}
     
 
     },
