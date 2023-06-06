@@ -13,4 +13,4 @@ const bikeSchema = new Schema (
     {timestamps: true}
 )
 
-module.exports = bikeSchemas
+module.exports = bikeSchema
