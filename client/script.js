@@ -37,6 +37,21 @@ class Bike {
         <h4>${this.description}</h4>
         </span>`
     }
+
+    createCartItem(quantity, cartItemID) {
+        return `
+        <div class="cart-item">
+        <img src="${this.img}"/>
+        <span>
+            ${this.brand} <br>
+            ${this.model} <br> <br>
+            Quantity: ${quantity} <br> <br>
+            ${this.price}
+        </span>
+        <button class="remove-from-cart-btn"id="${cartItemID}">Remove from Cart</button>
+        </div>
+        `
+    }
 }
 
 class Accessory {
@@ -116,23 +131,22 @@ $('.bikes-container').on('click', 'img', async function() {
     $('.add-cart-btn').on('click', async function() {
         let id = $(this).prop("id")
         let searchCartResult = await axios.get(`/api/cartItems/bicycleID/${id}`)
-        console.log(searchCartResult)
         if (searchCartResult.data[0]?.quantity > 0) {
-            console.log('put condition')
             let cartItemID = searchCartResult.data[0]._id
             let newQuantity = searchCartResult.data[0].quantity + 1
-            console.log(`quantity is ${newQuantity}`)
             await axios.put(`/api/cartItems/${cartItemID}`, {
                 quantity: newQuantity
             })
         } else {
-            console.log('post condition')
             await axios.post('/api/cartItems', {
                 bicycleID: id,
                 quantity: 1
             })
         }
-        console.log(`${id} button pressed`)
+        $('.add-cart-btn').text("ADDED TO CART").css("background-color", "#2a4f9a").attr("disabled", "true")
+        setTimeout(() => {
+            $('.add-cart-btn').text("ADD TO CART").css("background-color", "rgb(27, 177, 27)").removeAttr("disabled")
+        }, 2000);
     })
 })
 
@@ -140,7 +154,6 @@ $('#nav-accessories-btn').on('click', async function () {
     $('.accessories-container').empty()
     $('.container-wrapper').children().css("display", "none")
     $('.accessories-container').css("display", "grid")
-
     let response = await axios.get('/api/accessories')
     let data = response.data
     for (const accessory of data) {
@@ -163,13 +176,34 @@ $('.accessories-container').on('click', 'img', async function() {
     $('.accessory-product-container').append(accessory.createProductPage())
     $('.add-cart-btn').on('click', function() {
         let id = $(this).prop("id")
-        console.log(`${id} button pressed`)
     })
 })
 
-$('#cart-img').on('click', async function() {
+$('#cart-img').on('click', async function generateCart() {
     $('.container-wrapper').children().css("display", "none")
     $('.cart-container').css("display", "flex")
+    
+    $('.cart-contents').empty()
+    let response = await axios.get('/api/cartItems')
+    let data = response.data
+    if (data.length == 0) {
+        $('.cart-contents').append(`<h3>Your cart is empty!</h3>`)
+    }
+    for (const item of data) {
+        if (item.bicycleID) {
+            let quantity = item.quantity
+            let cartItemID = item._id
+            const { _id, type, brand, model, price, color, weight, img, description } = item.bicycleID
+            const bikeCartItem = new Bike(_id, type, brand, model, price, color, weight, img, description)
+            $('.cart-contents').append(bikeCartItem.createCartItem(quantity, cartItemID))
+            $(`#${cartItemID}`).on('click', async function() {
+                console.log(`removing ${cartItemID} from cart`)
+                await axios.delete(`/api/cartItems/${cartItemID}`)
+                generateCart()
+            })
+        }
+    }
+    // console.log(response)
 
     // const response = await axios.get('/api/cart')
     // let data = response.data
@@ -189,7 +223,6 @@ $('#contact-submit-btn').on('click', async function() {
     let email = $('#input-email').val()
     let message = $('#input-message').val()
     if (name && email && message) {
-        console.log(name, email, message)
         axios.post('/api/comments', {
             name: name,
             email: email,
@@ -227,7 +260,6 @@ $('#admin-login-btn').on('click', function() {
         let password = $('#admin-password-input').val()
         // if (username == 'admin' && password == 'admin') {
         if (true) {
-            console.log('admin successfully logged in')
             $('.login-form').css("display", "none")
             $('.admin-homepage').css("display", "flex")
             $('.admin-content').empty()
@@ -249,7 +281,6 @@ $('#admin-login-btn').on('click', function() {
                     <br>
                     `)
                 }
-                console.log(data)
             })
         } else {
             $('#invalid-login').css("display", "block")
