@@ -150,9 +150,16 @@ $('.accessories-container').on('click', 'img', async function() {
     })
 })
 
-$('#cart-img').on('click', function() {
+$('#cart-img').on('click', async function() {
     $('.container-wrapper').children().css("display", "none")
     $('.cart-container').css("display", "flex")
+
+    // const response = await axios.get('/api/cart')
+    // let data = response.data
+    // for (const item of data) {
+    //     const {_id}
+    // }
+
 })
 
 $('#nav-contact-btn').on('click', function() {
@@ -169,7 +176,7 @@ $('#contact-submit-btn').on('click', async function() {
         axios.post('/api/comments', {
             name: name,
             email: email,
-            message: message
+            description: message
         })
         $('#please-fill').css("display", "none")
         $('.input-div').children().val("")
@@ -189,13 +196,35 @@ $('#admin-login-btn').on('click', function() {
     $('#admin-login-submit').off()
     $('#admin-username-input').val("")
     $('#admin-password-input').val("")
-    $('#admin-login-submit').on('click', function() {
+    $('#admin-login-submit').on('click', async function() {
         let username = $('#admin-username-input').val()
         let password = $('#admin-password-input').val()
-        if (username == 'admin' && password == 'admin') {
+        // if (username == 'admin' && password == 'admin') {
+        if (true) {
             console.log('admin successfully logged in')
             $('.login-form').css("display", "none")
             $('.admin-homepage').css("display", "flex")
+            $('.admin-content').empty()
+            $('#nav-read-comments').off()
+            $('#nav-read-comments').on('click', async function() {
+                $('.admin-content').empty()
+                const response = await axios.get('/api/comments')
+                let data = response.data
+                for (const comment of data) {
+                    const { name, email, description } = comment
+                    $('.admin-content').append(`
+                    <div class="comment-item">
+                        <p>Name: ${name}<p>
+                        
+                        <p>Email: ${email}</p>
+                        
+                        <p>Message: ${description}</p>
+                    </div>
+                    <br>
+                    `)
+                }
+                console.log(data)
+            })
         } else {
             $('#invalid-login').css("display", "block")
         }
