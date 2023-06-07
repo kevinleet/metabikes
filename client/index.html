@@ -51,8 +51,6 @@
 
         <div class="accessory-product-container"></div>
 
-        <div class="admin-container"></div>
-
         <div class="cart-container"></div>
 
         <div class="contact-container">
@@ -67,7 +65,21 @@
             </div>
             <button type="submit" id="contact-submit-btn">Submit</button>
             <p id="please-fill" style="color: red; display: none;">Please fill out all required fields.</p>
-        </div>  
+        </div>
+
+        <div class="admin-container">
+            <form class="login-form" onsubmit="return false">
+                <label>Admin Login</label>
+                <br>
+                <input type="text" id="admin-username-input" placeholder="Username">
+                <input type="text" id="admin-password-input" placeholder="Password">
+                <button id="admin-login-submit">Submit</button>
+                <p id="invalid-login" style="display: none; color: red;">Invalid login credentials.</p>
+            </form>
+            <div class="admin-homepage">
+                <h1>ADMIN CONTROL PANEL</h1>
+            </div>
+        </div>
     </div>
 
 
