@@ -42,7 +42,6 @@ body {
     font-size: 2em;
     font-family: 'Fugaz One', cursive;
     align-self: center;
-    cursor: pointer;
 }
 
 .second-bar img {
@@ -77,36 +76,118 @@ body {
     text-decoration: underline;
 }
 
-.main-container {
+.home-container {
     margin: 0 auto;
     width: 80%;
     height: 500px;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.main-container img {
+.home-container img {
     height: 90%;
     margin: 2%;
     border-radius: 30px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.main-container div {
+.home-container div {
     margin-left: 30px;
     width: 500px;
     text-align: center;
-    /* border: 1px solid black; */
 }
 
-.main-container p {
+.home-container p {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.6em;
     line-height: 1.5em;
     letter-spacing: 0.1em;
+}
+
+.bikes-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bike-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 100px;
+    /* border: 1px solid black; */
+}
+
+.bike-grid-item span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    font-family: 'Nunito', sans-serif;
+}
+
+.bike-grid-item img {
+    width: 500px;
+    object-fit: contain;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.bike-grid-item img:hover {
+    width: 502px;
+}
+
+.accessories-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+}
+
+.accessory-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 50px;
+    align-self: flex-end;
+    /* border: 1px solid black; */
+}
+
+.accessory-grid-item span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    font-family: 'Nunito', sans-serif;
+}
+
+.accessory-grid-item img {
+    width: 250px;
+    object-fit: contain;
+    align-self: center;
+    cursor: pointer;
+}
+
+.accessory-grid-item img:hover {
+   width: 252px;
+}
+
+.admin-container {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    display: none;
+}
+
+.cart-container {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    display: none;
 }
 
 .footer {
