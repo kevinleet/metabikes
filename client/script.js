@@ -1,7 +1,7 @@
 console.log('script.js running successfully')
 
 class Bike {
-    constructor(_id, type, brand, model, price, color, weight, image, description) {
+    constructor(_id, type, brand, model, price, color, weight, img, description) {
         this._id = _id;
         this.type = type;
         this.brand = brand;
@@ -9,13 +9,13 @@ class Bike {
         this.price = formatNumberWithDollar(price);
         this.color = color;
         this.weight = weight;
-        this.image = image;
+        this.img = img;
         this.description = description;
     }
 
     createDiv() {
         return `<div class="bike-grid-item">
-        <img id="${this._id}" src="${this.image}"/>
+        <img id="${this._id}" src="${this.img}"/>
         <br>
         <span>${this.brand} ${this.model}<br>${this.color}<br>${this.type} Bike, ${this.weight} lbs.<br>Price: ${this.price}<span>
         </div>`
@@ -23,7 +23,7 @@ class Bike {
 
     createProductPage() {
         return `
-        <img src="${this.image}"/>
+        <img src="${this.img}"/>
         <span>
         <h1>${this.brand}<h1>
         <h2>${this.model}</h2>
@@ -97,8 +97,8 @@ $('#nav-bikes-btn').on('click', async function () {
     let response = await axios.get('/api/bikes')
     let data = response.data
     for (const bike of data) {
-        const { _id, type, brand, model, price, color, weight, image, description } = bike
-        const newBike = new Bike(_id, type, brand, model, price, color, weight, image, description)
+        const { _id, type, brand, model, price, color, weight, img, description } = bike
+        const newBike = new Bike(_id, type, brand, model, price, color, weight, img, description)
         $('.bikes-container').append(newBike.createDiv())
     }
 })
@@ -110,8 +110,8 @@ $('.bikes-container').on('click', 'img', async function() {
     let id = $(this).prop("id")
     const response = await axios.get(`/api/bikes/${id}`)
     let data = response.data
-    const { _id, type, brand, model, price, color, weight, image, description } = data
-    let bike = new Bike(_id, type, brand, model, price, color, weight, image, description)
+    const { _id, type, brand, model, price, color, weight, img, description } = data
+    let bike = new Bike(_id, type, brand, model, price, color, weight, img, description)
     $('.bike-product-container').append(bike.createProductPage())
     $('.add-cart-btn').on('click', function() {
         let id = $(this).prop("id")
@@ -150,14 +150,16 @@ $('.accessories-container').on('click', 'img', async function() {
     })
 })
 
-$('#admin-login-btn').on('click', function () {
-    $('.container-wrapper').children().css("display", "none")
-    $('.admin-container').css("display", "flex")
-})
-
-$('#cart-img').on('click', function() {
+$('#cart-img').on('click', async function() {
     $('.container-wrapper').children().css("display", "none")
     $('.cart-container').css("display", "flex")
+
+    // const response = await axios.get('/api/cart')
+    // let data = response.data
+    // for (const item of data) {
+    //     const {_id}
+    // }
+
 })
 
 $('#nav-contact-btn').on('click', function() {
@@ -174,7 +176,7 @@ $('#contact-submit-btn').on('click', async function() {
         axios.post('/api/comments', {
             name: name,
             email: email,
-            message: message
+            description: message
         })
         $('#please-fill').css("display", "none")
         $('.input-div').children().val("")
@@ -182,5 +184,49 @@ $('#contact-submit-btn').on('click', async function() {
     } else {
         $('#please-fill').css("display", "block")
     }
+})
 
+$('#admin-login-btn').on('click', function() {
+    $('.container-wrapper').children().css("display", "none")
+    $('.admin-container').css("display", "flex")
+    $('.login-form').css("display", "flex")
+    $('.admin-homepage').css("display", "none")
+    $('#invalid-login').css("display", "none")
+
+    $('#admin-login-submit').off()
+    $('#admin-username-input').val("")
+    $('#admin-password-input').val("")
+    $('#admin-login-submit').on('click', async function() {
+        let username = $('#admin-username-input').val()
+        let password = $('#admin-password-input').val()
+        // if (username == 'admin' && password == 'admin') {
+        if (true) {
+            console.log('admin successfully logged in')
+            $('.login-form').css("display", "none")
+            $('.admin-homepage').css("display", "flex")
+            $('.admin-content').empty()
+            $('#nav-read-comments').off()
+            $('#nav-read-comments').on('click', async function() {
+                $('.admin-content').empty()
+                const response = await axios.get('/api/comments')
+                let data = response.data
+                for (const comment of data) {
+                    const { name, email, description } = comment
+                    $('.admin-content').append(`
+                    <div class="comment-item">
+                        <p>Name: ${name}<p>
+                        
+                        <p>Email: ${email}</p>
+                        
+                        <p>Message: ${description}</p>
+                    </div>
+                    <br>
+                    `)
+                }
+                console.log(data)
+            })
+        } else {
+            $('#invalid-login').css("display", "block")
+        }
+    })
 })
