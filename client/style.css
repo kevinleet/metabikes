@@ -52,6 +52,18 @@
         align-self: center;
         cursor: pointer;
     }
+
+    .second-bar img:hover {
+        animation: cartShake 0.5s;
+    }
+
+    @keyframes cartShake {
+        0% {transform: rotate(0deg)}
+        30% {transform: rotate(10deg)}
+        50% {transform: rotate(0deg)}
+        80% {transform: rotate(-10deg)}
+        100% {transform: rotate(0deg)}
+    }
     
     .navbar {
         width: 50%;
@@ -76,6 +88,8 @@
         color: #2a4f9a;
         text-decoration: underline;
     }
+
+ 
     
     .home-container {
         margin: 0 auto;

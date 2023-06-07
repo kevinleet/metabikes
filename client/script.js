@@ -158,9 +158,11 @@ $('.bikes-container').on('click', 'img', async function() {
                 quantity: 1
             })
         }
+        $('#cart-img').css("animation", "cartShake 0.5s")
         $('.add-cart-btn').text("ADDED TO CART").css("background-color", "#2a4f9a").attr("disabled", "true")
         setTimeout(() => {
             $('.add-cart-btn').text("ADD TO CART").css("background-color", "rgb(27, 177, 27)").removeAttr("disabled")
+            $('#cart-img').css("animation", "")
         }, 2000);
     })
 })
@@ -203,9 +205,11 @@ $('.accessories-container').on('click', 'img', async function() {
                 quantity: 1
             })
         }
+        $('#cart-img').css("animation", "cartShake 0.5s")
         $('.add-cart-btn').text("ADDED TO CART").css("background-color", "#2a4f9a").attr("disabled", "true")
         setTimeout(() => {
             $('.add-cart-btn').text("ADD TO CART").css("background-color", "rgb(27, 177, 27)").removeAttr("disabled")
+            $('#cart-img').css("animation", "")
         }, 2000);
     })
 })
