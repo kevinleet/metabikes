@@ -86,6 +86,21 @@ class Accessory {
         <h4>${this.description}</h4>
         </span>`
     }
+
+    createCartItem(quantity, cartItemID) {
+        return `
+        <div class="cart-item">
+        <img src="${this.img}"/>
+        <span>
+            ${this.brand} <br>
+            ${this.item} <br> <br>
+            Quantity: ${quantity} <br> <br>
+            ${this.price}
+        </span>
+        <button class="remove-from-cart-btn"id="${cartItemID}">Remove from Cart</button>
+        </div>
+        `
+    }
 }
 
 function formatNumberWithDollar(price) {
@@ -174,8 +189,28 @@ $('.accessories-container').on('click', 'img', async function() {
     const { _id, type, brand, item, price, img, description } = data
     let accessory = new Accessory(_id, type, brand, item, price, img, description)
     $('.accessory-product-container').append(accessory.createProductPage())
-    $('.add-cart-btn').on('click', function() {
+    $('.add-cart-btn').on('click', async function() {
         let id = $(this).prop("id")
+        let searchCartResult = await axios.get(`api/cartItems/accessoryID/${id}`)
+        // console.log(searchCartResult)
+        if (searchCartResult.data[0]?.quantity > 0) {
+            // console.log('push condition')
+            let cartItemID = searchCartResult.data[0]._id
+            let newQuantity = searchCartResult.data[0].quantity + 1
+            await axios.put(`api/cartItems/${cartItemID}`, {
+                quantity: newQuantity
+            })
+        } else {
+            // console.log('post route hit')
+            await axios.post('/api/cartItems', {
+                accessoryID: id,
+                quantity: 1
+            })
+        }
+        $('.add-cart-btn').text("ADDED TO CART").css("background-color", "#2a4f9a").attr("disabled", "true")
+        setTimeout(() => {
+            $('.add-cart-btn').text("ADD TO CART").css("background-color", "rgb(27, 177, 27)").removeAttr("disabled")
+        }, 2000);
     })
 })
 
@@ -189,11 +224,11 @@ $('#cart-img').on('click', async function generateCart() {
     if (data.length == 0) {
         $('.cart-contents').append(`<h3>Your cart is empty!</h3>`)
     }
-    for (const item of data) {
-        if (item.bicycleID) {
-            let quantity = item.quantity
-            let cartItemID = item._id
-            const { _id, type, brand, model, price, color, weight, img, description } = item.bicycleID
+    for (const cartitem of data) {
+        if (cartitem.bicycleID) {
+            let quantity = cartitem.quantity
+            let cartItemID = cartitem._id
+            const { _id, type, brand, model, price, color, weight, img, description } = cartitem.bicycleID
             const bikeCartItem = new Bike(_id, type, brand, model, price, color, weight, img, description)
             $('.cart-contents').append(bikeCartItem.createCartItem(quantity, cartItemID))
             $(`#${cartItemID}`).on('click', async function() {
@@ -201,16 +236,20 @@ $('#cart-img').on('click', async function generateCart() {
                 await axios.delete(`/api/cartItems/${cartItemID}`)
                 generateCart()
             })
+        } else if (cartitem.accessoryID) {
+            let quantity = cartitem.quantity
+            let cartItemID = cartitem._id
+            console.log(cartitem.accessoryID)
+            const { _id, type, brand, item, price, img, description } = cartitem.accessoryID
+            const accessoryCartItem = new Accessory(_id, type, brand, item, price, img, description)
+            $('.cart-contents').append(accessoryCartItem.createCartItem(quantity, cartItemID))
+            $(`#${cartItemID}`).on('click', async function() {
+                console.log(`removing ${cartItemID} from cart`)
+                await axios.delete(`/api/cartItems/${cartItemID}`)
+                generateCart()
+            })
         }
     }
-    // console.log(response)
-
-    // const response = await axios.get('/api/cart')
-    // let data = response.data
-    // for (const item of data) {
-    //     const {_id}
-    // }
-
 })
 
 $('#nav-contact-btn').on('click', function() {
