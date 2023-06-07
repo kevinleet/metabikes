@@ -1,213 +1,777 @@
-body {
-    margin: 0;
+@media only screen and (min-width: 1600px) {
+    body {
+        margin: 0;
+    }
+    
+    .top-bar {
+        background-color: #4267B2;
+        width: 100%;
+        height: 60px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .top-bar span {
+        align-self: flex-end;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        color: white;
+        cursor: pointer;
+        font-family: 'Nunito', sans-serif;
+        font-size: 0.9em;
+    }
+    
+    .top-bar span:hover {
+        text-decoration: underline;
+    }
+    
+    .second-bar {
+        margin-bottom: 50px;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .second-bar h1 {
+        margin-left: 20px;
+        color: #2a4f9a;
+        font-size: 2em;
+        font-family: 'Fugaz One', cursive;
+        align-self: center;
+    }
+    
+    .second-bar img {
+        margin-right: 5%;
+        width: 28px;
+        height: 25px;
+        align-self: center;
+        cursor: pointer;
+    }
+    
+    .navbar {
+        width: 50%;
+        max-width: 500px;
+    }
+    
+    .navbar ul {
+        padding-left: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .navbar li {
+        margin-left: 0;
+        font-size: 1.1em;
+        font-family: 'Nunito', sans-serif;
+        cursor: pointer;
+    }
+    
+    .nav-button:hover {
+        color: #2a4f9a;
+        text-decoration: underline;
+    }
+    
+    .home-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .home-container img {
+        height: 90%;
+        margin: 2%;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .home-container div {
+        margin-left: 30px;
+        width: 500px;
+        text-align: center;
+    }
+    
+    .home-container p {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.8em;
+        line-height: 1.5em;
+        letter-spacing: 0.1em;
+    }
+    
+    .bikes-container {
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* border: 1px solid black; */
+    }
+    
+    .bike-grid-item {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-bottom: 50px;
+        align-self: center;
+        /* border: 1px solid black;   */
+    }
+    
+    .bike-grid-item span {
+        margin-left: 10px;
+        font-size: 1.1em;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .bike-grid-item img {
+        width: 450px;
+        object-fit: contain;
+        align-self: flex-start;
+        cursor: pointer;
+    }
+    
+    .bike-grid-item img:hover {
+        width: 452px;
+    }
+    
+    .accessories-container {
+        margin: 0 auto;
+        width: 80%;
+        height: auto;
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: space-around;
+        /* border: 1px solid black; */
+    }
+    
+    .accessory-grid-item {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-bottom: 50px;
+        align-self: flex-end;
+        /* border: 1px solid black; */
+    }
+    
+    .accessory-grid-item span {
+        margin-left: 10px;
+        font-size: 1.1em;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .accessory-grid-item img {
+        width: 200px;
+        object-fit: contain;
+        align-self: flex-start;
+        cursor: pointer;
+    }
+    
+    .accessory-grid-item img:hover {
+       width: 202px;
+    }
+    
+    .admin-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+    }
+    
+    .cart-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+    }
+
+    .contact-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        /* border: 1px solid black; */
+        font-family: 'Nunito', sans-serif;
+    }
+
+    #input-name {
+        width: 300px;
+        height: 25px;
+        font-size: 1.2em;
+        padding-left: 5px;
+        margin-bottom: 15px;
+        font-family: monospace;
+    }
+
+    #input-email {
+        width: 300px;
+        height: 25px;
+        font-size: 1.2em;
+        padding-left: 5px;
+        margin-bottom: 15px;
+        font-family: monospace;
+    }
+
+    #input-message {
+        font-size: 1.3em;
+    }
+
+    #contact-submit-btn {
+        margin-top: 10px;
+        width: 90px;
+        height: 25px;
+    }
+    
+    .footer {
+        margin-top: 30px;
+        width: 100%;
+        height: 50px;
+        background-color: #2a4f9a;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    
+    .footer span {
+        padding-bottom: 5px;
+    }
+    
+    .footer p {
+        margin: 0;
+        color: rgb(248, 248, 248);
+        font-size: 0.8em;
+        font-family: 'Nunito', sans-serif;
+    }
 }
 
-.top-bar {
-    background-color: #4267B2;
-    width: 100%;
-    height: 60px;
-    margin-left: 0px;
-    display: flex;
-    justify-content: flex-end;
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+    body {
+        margin: 0;
+    }
+    
+    .top-bar {
+        background-color: #4267B2;
+        width: 100%;
+        height: 60px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .top-bar span {
+        align-self: flex-end;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        color: white;
+        cursor: pointer;
+        font-family: 'Nunito', sans-serif;
+        font-size: 0.9em;
+    }
+    
+    .top-bar span:hover {
+        text-decoration: underline;
+    }
+    
+    .second-bar {
+        margin-bottom: 50px;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .second-bar h1 {
+        margin-left: 20px;
+        color: #2a4f9a;
+        font-size: 2em;
+        font-family: 'Fugaz One', cursive;
+        align-self: center;
+    }
+    
+    .second-bar img {
+        margin-right: 5%;
+        width: 28px;
+        height: 25px;
+        align-self: center;
+        cursor: pointer;
+    }
+    
+    .navbar {
+        width: 50%;
+        max-width: 500px;
+    }
+    
+    .navbar ul {
+        padding-left: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .navbar li {
+        margin-left: 0;
+        font-size: 1.1em;
+        font-family: 'Nunito', sans-serif;
+        cursor: pointer;
+    }
+    
+    .nav-button:hover {
+        color: #2a4f9a;
+        text-decoration: underline;
+    }
+    
+    .home-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .home-container img {
+        height: 85%;
+        margin: 2%;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .home-container div {
+        margin-left: 30px;
+        width: 500px;
+        text-align: center;
+    }
+    
+    .home-container p {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.6em;
+        line-height: 1.5em;
+        letter-spacing: 0.1em;
+    }
+    
+    .bikes-container {
+        margin: 0 auto;
+        width: 80%;
+        height: auto;
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        /* border: 1px solid black; */
+    }
+    
+    .bike-grid-item {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-bottom: 50px;
+        align-self: center;
+        /* border: 1px solid black;   */
+    }
+    
+    .bike-grid-item span {
+        margin-left: 10px;
+        font-size: 1.1em;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .bike-grid-item img {
+        width: 450px;
+        object-fit: contain;
+        align-self: flex-start;
+        cursor: pointer;
+    }
+    
+    .bike-grid-item img:hover {
+        width: 452px;
+    }
+    
+    .accessories-container {
+        margin: 0 auto;
+        width: 80%;
+        height: auto;
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: space-around;
+        /* border: 1px solid black; */
+    }
+    
+    .accessory-grid-item {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-bottom: 50px;
+        align-self: flex-end;
+        /* border: 1px solid black; */
+    }
+    
+    .accessory-grid-item span {
+        margin-left: 10px;
+        font-size: 1.1em;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .accessory-grid-item img {
+        width: 200px;
+        object-fit: contain;
+        align-self: flex-start;
+        cursor: pointer;
+    }
+    
+    .accessory-grid-item img:hover {
+       width: 202px;
+    }
+    
+    .admin-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+    }
+    
+    .cart-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+    }
+
+    .contact-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        /* border: 1px solid black; */
+        font-family: 'Nunito', sans-serif;
+    }
+
+    #input-name {
+        width: 300px;
+        height: 25px;
+        font-size: 1.2em;
+        padding-left: 5px;
+        margin-bottom: 15px;
+        font-family: monospace;
+    }
+
+    #input-email {
+        width: 300px;
+        height: 25px;
+        font-size: 1.2em;
+        padding-left: 5px;
+        margin-bottom: 15px;
+        font-family: monospace;
+    }
+
+    #input-message {
+        font-size: 1.3em;
+    }
+
+    #contact-submit-btn {
+        margin-top: 10px;
+        width: 90px;
+        height: 25px;
+    }
+    
+    .footer {
+        margin-top: 30px;
+        width: 100%;
+        height: 50px;
+        background-color: #2a4f9a;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    
+    .footer span {
+        padding-bottom: 5px;
+    }
+    
+    .footer p {
+        margin: 0;
+        color: rgb(248, 248, 248);
+        font-size: 0.8em;
+        font-family: 'Nunito', sans-serif;
+    }
 }
 
-.top-bar span {
-    align-self: flex-end;
-    margin-bottom: 5px;
-    margin-right: 10px;
-    color: white;
-    cursor: pointer;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.9em;
-}
 
-.top-bar span:hover {
-    text-decoration: underline;
-}
+@media only screen and (min-width: 800px) and (max-width: 1199px) {
+    body {
+        margin: 0;
+    }
+    
+    .top-bar {
+        background-color: #4267B2;
+        width: 100%;
+        height: 60px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .top-bar span {
+        align-self: flex-end;
+        margin-bottom: 5px;
+        margin-right: 10px;
+        color: white;
+        cursor: pointer;
+        font-family: 'Nunito', sans-serif;
+        font-size: 0.9em;
+    }
+    
+    .top-bar span:hover {
+        text-decoration: underline;
+    }
+    
+    .second-bar {
+        margin-bottom: 50px;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .second-bar h1 {
+        margin-left: 20px;
+        color: #2a4f9a;
+        font-size: 2em;
+        font-family: 'Fugaz One', cursive;
+        align-self: center;
+    }
+    
+    .second-bar img {
+        margin-right: 5%;
+        width: 28px;
+        height: 25px;
+        align-self: center;
+        cursor: pointer;
+    }
+    
+    .navbar {
+        width: 50%;
+        max-width: 500px;
+    }
+    
+    .navbar ul {
+        padding-left: 0;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .navbar li {
+        margin-left: 0;
+        font-size: 1.1em;
+        font-family: 'Nunito', sans-serif;
+        cursor: pointer;
+    }
+    
+    .nav-button:hover {
+        color: #2a4f9a;
+        text-decoration: underline;
+    }
+    
+    .home-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .home-container img {
+        height: 80%;
+        margin: 2%;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    .home-container div {
+        margin-left: 30px;
+        width: 500px;
+        text-align: center;
+    }
+    
+    .home-container p {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.4em;
+        line-height: 1.5em;
+        letter-spacing: 0.1em;
+    }
+    
+    .bikes-container {
+        margin: 0 auto;
+        width: 80%;
+        height: auto;
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        /* border: 1px solid black; */
+    }
+    
+    .bike-grid-item {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-bottom: 50px;
+        align-self: flex-start;
+        /* border: 1px solid black;   */
+    }
+    
+    .bike-grid-item span {
+        margin-left: 10px;
+        font-size: 0.9em;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .bike-grid-item img {
+        width: 300px;
+        object-fit: contain;
+        align-self: flex-start;
+        cursor: pointer;
+    }
+    
+    .bike-grid-item img:hover {
+        width: 302px;
+    }
+    
+    .accessories-container {
+        margin: 0 auto;
+        width: 80%;
+        height: auto;
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-around;
+        /* border: 1px solid black; */
+    }
+    
+    .accessory-grid-item {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-bottom: 50px;
+        align-self: flex-end;
+        /* border: 1px solid black; */
+    }
+    
+    .accessory-grid-item span {
+        margin-left: 10px;
+        font-size: 1.1em;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .accessory-grid-item img {
+        width: 150px;
+        object-fit: contain;
+        align-self: flex-start;
+        cursor: pointer;
+    }
+    
+    .accessory-grid-item img:hover {
+       width: 152px;
+    }
+    
+    .admin-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+    }
+    
+    .cart-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+    }
 
-.second-bar {
-    margin-bottom: 30px;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+    .contact-container {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        /* border: 1px solid black; */
+        font-family: 'Nunito', sans-serif;
+    }
 
-.second-bar h1 {
-    margin-left: 20px;
-    color: #2a4f9a;
-    font-size: 2em;
-    font-family: 'Fugaz One', cursive;
-    align-self: center;
-}
+    #input-name {
+        width: 300px;
+        height: 25px;
+        font-size: 1.2em;
+        padding-left: 5px;
+        margin-bottom: 15px;
+        font-family: monospace;
+    }
 
-.second-bar img {
-    margin-right: 5%;
-    width: 28px;
-    height: 25px;
-    align-self: center;
-    cursor: pointer;
-}
+    #input-email {
+        width: 300px;
+        height: 25px;
+        font-size: 1.2em;
+        padding-left: 5px;
+        margin-bottom: 15px;
+        font-family: monospace;
+    }
 
-.navbar {
-    width: 50%;
-    max-width: 500px;
-}
+    #input-message {
+        font-size: 1.3em;
+    }
 
-.navbar ul {
-    padding-left: 0;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.navbar li {
-    margin-left: 0;
-    font-size: 1.1em;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-}
-
-.nav-button:hover {
-    color: #2a4f9a;
-    text-decoration: underline;
-}
-
-.home-container {
-    margin: 0 auto;
-    width: 80%;
-    height: 500px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.home-container img {
-    height: 90%;
-    margin: 2%;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.home-container div {
-    margin-left: 30px;
-    width: 500px;
-    text-align: center;
-}
-
-.home-container p {
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.6em;
-    line-height: 1.5em;
-    letter-spacing: 0.1em;
-}
-
-.bikes-container {
-    margin: 0 auto;
-    width: 80%;
-    height: auto;
-    display: none;
-    grid-template-columns: 1fr 1fr;
-}
-
-.bike-grid-item {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    margin-bottom: 100px;
-    /* border: 1px solid black; */
-}
-
-.bike-grid-item span {
-    margin-left: 10px;
-    font-size: 1.1em;
-    font-family: 'Nunito', sans-serif;
-}
-
-.bike-grid-item img {
-    width: 500px;
-    object-fit: contain;
-    align-self: flex-start;
-    cursor: pointer;
-}
-
-.bike-grid-item img:hover {
-    width: 502px;
-}
-
-.accessories-container {
-    margin: 0 auto;
-    width: 80%;
-    height: auto;
-    display: none;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-around;
-}
-
-.accessory-grid-item {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    margin-bottom: 50px;
-    align-self: flex-end;
-    /* border: 1px solid black; */
-}
-
-.accessory-grid-item span {
-    margin-left: 10px;
-    font-size: 1.1em;
-    font-family: 'Nunito', sans-serif;
-}
-
-.accessory-grid-item img {
-    width: 250px;
-    object-fit: contain;
-    align-self: center;
-    cursor: pointer;
-}
-
-.accessory-grid-item img:hover {
-   width: 252px;
-}
-
-.admin-container {
-    margin: 0 auto;
-    width: 80%;
-    height: 500px;
-    display: none;
-}
-
-.cart-container {
-    margin: 0 auto;
-    width: 80%;
-    height: 500px;
-    display: none;
-}
-
-.footer {
-    margin-top: 30px;
-    width: 100%;
-    height: 50px;
-    background-color: #2a4f9a;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.footer span {
-    padding-bottom: 5px;
-}
-
-.footer p {
-    margin: 0;
-    color: rgb(248, 248, 248);
-    font-size: 0.8em;
-    font-family: 'Nunito', sans-serif;
+    #contact-submit-btn {
+        margin-top: 10px;
+        width: 90px;
+        height: 25px;
+    }
+    
+    .footer {
+        margin-top: 30px;
+        width: 100%;
+        height: 50px;
+        background-color: #2a4f9a;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    
+    .footer span {
+        padding-bottom: 5px;
+    }
+    
+    .footer p {
+        margin: 0;
+        color: rgb(248, 248, 248);
+        font-size: 0.8em;
+        font-family: 'Nunito', sans-serif;
+    }
 }
