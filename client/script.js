@@ -113,8 +113,25 @@ $('.bikes-container').on('click', 'img', async function() {
     const { _id, type, brand, model, price, color, weight, img, description } = data
     let bike = new Bike(_id, type, brand, model, price, color, weight, img, description)
     $('.bike-product-container').append(bike.createProductPage())
-    $('.add-cart-btn').on('click', function() {
+    $('.add-cart-btn').on('click', async function() {
         let id = $(this).prop("id")
+        let searchCartResult = await axios.get(`/api/cartItems/bicycleID/${id}`)
+        console.log(searchCartResult)
+        if (searchCartResult.data[0]?.quantity > 0) {
+            console.log('put condition')
+            let cartItemID = searchCartResult.data[0]._id
+            let newQuantity = searchCartResult.data[0].quantity + 1
+            console.log(`quantity is ${newQuantity}`)
+            await axios.put(`/api/cartItems/${cartItemID}`, {
+                quantity: newQuantity
+            })
+        } else {
+            console.log('post condition')
+            await axios.post('/api/cartItems', {
+                bicycleID: id,
+                quantity: 1
+            })
+        }
         console.log(`${id} button pressed`)
     })
 })
@@ -193,6 +210,15 @@ $('#admin-login-btn').on('click', function() {
     $('.admin-homepage').css("display", "none")
     $('#invalid-login').css("display", "none")
 
+
+    $('#nav-manage-bikes').on('click', function() {
+        $('.admin-content').empty()
+    })
+
+    $('#nav-manage-accessories').on('click', function() {
+        $('.admin-content').empty()
+    })
+
     $('#admin-login-submit').off()
     $('#admin-username-input').val("")
     $('#admin-password-input').val("")
@@ -229,4 +255,9 @@ $('#admin-login-btn').on('click', function() {
             $('#invalid-login').css("display", "block")
         }
     })
+
+
+
+
+
 })

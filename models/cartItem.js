@@ -2,7 +2,8 @@ const { Schema } = require("mongoose");
 
 const cartItemSchema = new Schema(
     {
-        itemID: { type: Schema.Types.ObjectId, require: true },
+        bicycleID: { type: Schema.Types.ObjectId, ref: 'Bike', require: true },
+        accessoryID: { type: Schema.Types.ObjectId, ref: 'Accessory', require: true },
         quantity: { type: Number, require: true },
     },
 
