@@ -9,7 +9,7 @@ const bikeSchema = new Schema (
         color: {type: String, require: true},
         weight: {type: Number, require: true},
         description: {type: String, require: true},
-        image: {type: String, require: true},
+        img: {type: String, require: true},
     },
 
     {timestamps: true}
