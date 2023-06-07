@@ -41,6 +41,8 @@ const getBikeById = async (req, res) => {
     }
 };
 
+//////////////////// ADMIN FUNCTIONS ////////////////////
+
 const createBike = async (req, res) => {
     try {
         const newBike = await new Bike(req.body);
@@ -55,11 +57,11 @@ const createBike = async (req, res) => {
 const updateBike = async (req, res) => {
     try {
         const { id } = req.params;
-        const updateBike = await Bike.findByIdAndUpdate(id, req.body, {
+        const updatedBike = await Bike.findByIdAndUpdate(id, req.body, {
             new: true,
         });
-        if (updateBike) {
-            return res.json({ updateBike });
+        if (updatedBike) {
+            return res.json({ updatedBike });
         }
         return res.send("Oops.  No bike Found. You made Mark sad. :'(");
     } catch (e) {
@@ -71,9 +73,9 @@ const updateBike = async (req, res) => {
 const deleteBike = async (req, res) => {
     try {
         const { id } = req.params;
-        const deleteBike = await Bike.findByIdAndDelete(id);
-        if (deleteBike) {
-            return res.json({ deleteBike });
+        const deletedBike = await Bike.findByIdAndDelete(id);
+        if (deletedBike) {
+            return res.json({ deletedBike });
         }
         return res.send("Oops. No Bike found. You made Mark sad. :'(");
     } catch (e) {
