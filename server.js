@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(logger('dev'))
 
-// app.use('/api', Router)
+app.use('/api', Router)
 
 app.use('/', express.static('client'))
 app.use('*', express.static('client'))
