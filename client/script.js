@@ -32,7 +32,7 @@ class Bike {
         <h4>Weight: ${this.weight}lbs</h4>
         <br>
         <h2>Price: ${this.price}</h2>
-        <button>ADD TO CART</button>
+        <button class="add-cart-btn" id="${this._id}">ADD TO CART</button>
         <br>
         <h4>${this.description}</h4>
         </span>`
@@ -56,6 +56,20 @@ class Accessory {
         <br>
         <span>${this.brand}<br>${this.item}<br>Price: ${this.price}</span>
         </div>`
+    }
+
+    createProductPage() {
+        return `
+        <img src="${this.img}"/>
+        <span>
+        <h1>${this.brand}<h1>
+        <h2>${this.item}</h2>
+        <br>
+        <h2>Price: ${this.price}</h2>
+        <button class="add-cart-btn" id="${this._id}">ADD TO CART</button>
+        <br>
+        <h4>${this.description}</h4>
+        </span>`
     }
 }
 
@@ -97,9 +111,12 @@ $('.bikes-container').on('click', 'img', async function() {
     const response = await axios.get(`/api/bikes/${id}`)
     let data = response.data
     const { _id, type, brand, model, price, color, weight, image, description } = data
-    console.log(data)
     let bike = new Bike(_id, type, brand, model, price, color, weight, image, description)
     $('.bike-product-container').append(bike.createProductPage())
+    $('.add-cart-btn').on('click', function() {
+        let id = $(this).prop("id")
+        console.log(`${id} button pressed`)
+    })
 })
 
 $('#nav-accessories-btn').on('click', async function () {
@@ -114,7 +131,23 @@ $('#nav-accessories-btn').on('click', async function () {
         const newAccessory = new Accessory(_id, type, brand, item, price, img, description)
         $('.accessories-container').append(newAccessory.createDiv())
     }
+})
 
+$('.accessories-container').on('click', 'img', async function() {
+    $('.accessory-product-container').empty()
+    $('.container-wrapper').children().css("display", "none")
+    $('.accessory-product-container').css("display", "flex")
+    let id = $(this).prop("id")
+    const response = await axios.get(`/api/accessories/${id}`)
+    let data = response.data
+    console.log(data)
+    const { _id, type, brand, item, price, img, description } = data
+    let accessory = new Accessory(_id, type, brand, item, price, img, description)
+    $('.accessory-product-container').append(accessory.createProductPage())
+    $('.add-cart-btn').on('click', function() {
+        let id = $(this).prop("id")
+        console.log(`${id} button pressed`)
+    })
 })
 
 $('#admin-login-btn').on('click', function () {
