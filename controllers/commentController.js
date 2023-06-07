@@ -1,4 +1,5 @@
 const { Comment } = require("../models");
+const someCRUD = require("../controllers/someCRUD");
 
 const getComments = async (req, res) => {
     let comments;
@@ -17,56 +18,19 @@ const getComments = async (req, res) => {
 };
 
 const getCommentById = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const comment = await Comment.findById(id);
-        if (!comment) throw Error("Comment Object ID Not Found");
-        res.json(comment);
-    } catch (e) {
-        console.log(e);
-        res.send("Oops. That didn't work. You made Mark sad. :'(");
-    }
+    someCRUD.getObjectById(req, res, Comment);
 };
 
 const createComment = async (req, res) => {
-    try {
-        const newComment = await new Comment(req.body);
-        await newComment.save();
-        return res.json({ newComment });
-    } catch (e) {
-        console.log(e);
-        res.send("Oops. That didn't work. You made Mark sad. :'(");
-    }
+    someCRUD.createObject(req, res, Comment);
 };
 
 const updateComment = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const updatedComment = await Comment.findByIdAndUpdate(id, req.body, {
-            new: true,
-        });
-        if (updatedComment) {
-            return res.json({ updatedComment });
-        }
-        return res.send("Oops.  No comment Found. You made Mark sad. :'(");
-    } catch (e) {
-        console.log(e);
-        res.send("Oops. That didn't work. You made Mark sad. :'(");
-    }
+    someCRUD.updateObjectByID(req, res, Comment);
 };
 
 const deleteComment = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const deletedComment = await Comment.findByIdAndDelete(id);
-        if (deletedComment) {
-            return res.json({ deletedComment });
-        }
-        return res.send("Oops. No comment found. You made Mark sad. :'(");
-    } catch (e) {
-        console.log(e);
-        res.send("Oops. That didn't work. You made Mark sad. :'(");
-    }
+    someCRUD.deleteObjectByID(req, res, Comment);
 };
 
 module.exports = {
