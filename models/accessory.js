@@ -2,7 +2,7 @@ const { Schema } = require("mongoose");
 
 const accessorySchema = new Schema(
     {
-        type: { type: String, require: true },
+        type: { type: Schema.Types.ObjectId, ref: 'Bike'},
         brand: { type: String, require: true },
         item: { type: String, require: true },
         price: { type: Number, require: true },

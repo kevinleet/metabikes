@@ -6,10 +6,10 @@ const bikeSchema = new Schema (
         brand: {type: String, require: true},
         model: {type: String, require: true},
         price: {type: Number, require: true},
-        colot: {type: String, require: true},
+        color: {type: String, require: true},
         weight: {type: Number, require: true},
         description: {type: String, require: true},
-        immage: {type: String, require: true},
+        image: {type: String, require: true},
     },
 
     {timestamps: true}
