@@ -8,6 +8,7 @@ const accessorySchema = new Schema(
         price: { type: Number, require: true },
         img: { type: String, require: true },
         description: { type: String, require: true },
+        category: { type: String, require: true },
     },
     { timestamps: true }
 );
