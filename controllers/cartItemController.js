@@ -1,7 +1,9 @@
 const { CartItem } = require("../models");
 
 const getCartItems = async (req, res) => {
-    const cartItems = await CartItem.find({}).populate("bicycleID")
+    const cartItems = await CartItem.find({})
+        .populate("bicycleID")
+        .populate("accessoryID");
     res.json(cartItems);
 };
 
@@ -19,15 +21,27 @@ const getCartItemsById = async (req, res) => {
 
 const getCartItemByBicycleID = async (req, res) => {
     try {
-        const { bicycleID } = req.params
-        const cartItem = await CartItem.find({bicycleID: bicycleID})
-        if (!cartItem) throw Error("Cart Object ItemID Not Found")
-        res.json(cartItem)
+        const { bicycleID } = req.params;
+        const cartItem = await CartItem.find({ bicycleID: bicycleID });
+        if (!cartItem) throw Error("Cart Object ItemID Not Found");
+        res.json(cartItem);
     } catch (e) {
-        console.log(e)
+        console.log(e);
         res.send("Oops. That didn't work. You made Mark sad. :'(");
     }
-}
+};
+
+const getCartItemByAccessoryID = async (req, res) => {
+    try {
+        const { accessoryID } = req.params;
+        const cartItem = await CartItem.find({ accessoryID: accessoryID });
+        if (!cartItem) throw Error("Cart Object ItemID Not Found");
+        res.json(cartItem);
+    } catch (e) {
+        console.log(e);
+        res.send("Oops. That didn't work. You made Mark sad. :'(");
+    }
+};
 
 const createCartItem = async (req, res) => {
     try {
@@ -76,5 +90,6 @@ module.exports = {
     getCartItemsById,
     updateCartItem,
     deleteCartItem,
-    getCartItemByBicycleID
+    getCartItemByBicycleID,
+    getCartItemByAccessoryID,
 };
