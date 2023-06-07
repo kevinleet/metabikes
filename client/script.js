@@ -17,7 +17,7 @@ class Bike {
         return `<div class="bike-grid-item">
         <img id="${this._id}" src="${this.img}"/>
         <br>
-        <span>${this.brand} ${this.model}<br>${this.color}<br>${this.type} Bike, ${this.weight} lbs.<br>Price: ${this.price}<span>
+        <span>${this.brand} ${this.model}<br>${this.color}<br>${this.type} Bike, ${this.weight} lbs.<br>Price: ${this.price}</span>
         </div>`;
     }
 
