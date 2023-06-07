@@ -20,7 +20,7 @@ const getCommentById = async (req, res) => {
     try {
         const { id } = req.params;
         const comment = await Comment.findById(id);
-        if (!comment) throw Error("Bike Object ID Not Found");
+        if (!comment) throw Error("Comment Object ID Not Found");
         res.json(comment);
     } catch (e) {
         console.log(e);
@@ -48,7 +48,7 @@ const updateComment = async (req, res) => {
         if (updatedComment) {
             return res.json({ updatedComment });
         }
-        return res.send("Oops.  No bike Found. You made Mark sad. :'(");
+        return res.send("Oops.  No comment Found. You made Mark sad. :'(");
     } catch (e) {
         console.log(e);
         res.send("Oops. That didn't work. You made Mark sad. :'(");
@@ -62,7 +62,7 @@ const deleteComment = async (req, res) => {
         if (deletedComment) {
             return res.json({ deletedComment });
         }
-        return res.send("Oops. No Bike found. You made Mark sad. :'(");
+        return res.send("Oops. No comment found. You made Mark sad. :'(");
     } catch (e) {
         console.log(e);
         res.send("Oops. That didn't work. You made Mark sad. :'(");

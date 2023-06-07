@@ -66,7 +66,7 @@ const updateAccessory = async (req, res) => {
         if (updatedAccessory) {
             return res.json({ updatedAccessory });
         }
-        return res.send("Oops.  No bike Found. You made Mark sad. :'(");
+        return res.send("Oops.  No accessory Found. You made Mark sad. :'(");
     } catch (e) {
         console.log(e);
         res.send("Oops. That didn't work. You made Mark sad. :'(");
@@ -80,7 +80,7 @@ const deleteAccessory = async (req, res) => {
         if (deletedAccessory) {
             return res.json({ deletedAccessory });
         }
-        return res.send("Oops. No Bike found. You made Mark sad. :'(");
+        return res.send("Oops. No accessory found. You made Mark sad. :'(");
     } catch (e) {
         console.log(e);
         res.send("Oops. That didn't work. You made Mark sad. :'(");
