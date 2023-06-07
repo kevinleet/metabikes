@@ -185,23 +185,19 @@ $('.accessories-container').on('click', 'img', async function() {
     let id = $(this).prop("id")
     const response = await axios.get(`/api/accessories/${id}`)
     let data = response.data
-    console.log(data)
     const { _id, type, brand, item, price, img, description } = data
     let accessory = new Accessory(_id, type, brand, item, price, img, description)
     $('.accessory-product-container').append(accessory.createProductPage())
     $('.add-cart-btn').on('click', async function() {
         let id = $(this).prop("id")
         let searchCartResult = await axios.get(`api/cartItems/accessoryID/${id}`)
-        // console.log(searchCartResult)
         if (searchCartResult.data[0]?.quantity > 0) {
-            // console.log('push condition')
             let cartItemID = searchCartResult.data[0]._id
             let newQuantity = searchCartResult.data[0].quantity + 1
             await axios.put(`api/cartItems/${cartItemID}`, {
                 quantity: newQuantity
             })
         } else {
-            // console.log('post route hit')
             await axios.post('/api/cartItems', {
                 accessoryID: id,
                 quantity: 1
@@ -232,19 +228,16 @@ $('#cart-img').on('click', async function generateCart() {
             const bikeCartItem = new Bike(_id, type, brand, model, price, color, weight, img, description)
             $('.cart-contents').append(bikeCartItem.createCartItem(quantity, cartItemID))
             $(`#${cartItemID}`).on('click', async function() {
-                console.log(`removing ${cartItemID} from cart`)
                 await axios.delete(`/api/cartItems/${cartItemID}`)
                 generateCart()
             })
         } else if (cartitem.accessoryID) {
             let quantity = cartitem.quantity
             let cartItemID = cartitem._id
-            console.log(cartitem.accessoryID)
             const { _id, type, brand, item, price, img, description } = cartitem.accessoryID
             const accessoryCartItem = new Accessory(_id, type, brand, item, price, img, description)
             $('.cart-contents').append(accessoryCartItem.createCartItem(quantity, cartItemID))
             $(`#${cartItemID}`).on('click', async function() {
-                console.log(`removing ${cartItemID} from cart`)
                 await axios.delete(`/api/cartItems/${cartItemID}`)
                 generateCart()
             })
@@ -281,53 +274,93 @@ $('#admin-login-btn').on('click', function() {
     $('.login-form').css("display", "flex")
     $('.admin-homepage').css("display", "none")
     $('#invalid-login').css("display", "none")
-
-
-    $('#nav-manage-bikes').on('click', function() {
-        $('.admin-content').empty()
-    })
-
-    $('#nav-manage-accessories').on('click', function() {
-        $('.admin-content').empty()
-    })
-
     $('#admin-login-submit').off()
     $('#admin-username-input').val("")
     $('#admin-password-input').val("")
     $('#admin-login-submit').on('click', async function() {
         let username = $('#admin-username-input').val()
         let password = $('#admin-password-input').val()
-        // if (username == 'admin' && password == 'admin') {
-        if (true) {
+        if (username == 'admin' && password == 'admin') {
+        // if (true) {
             $('.login-form').css("display", "none")
             $('.admin-homepage').css("display", "flex")
             $('.admin-content').empty()
+
+            $('#nav-manage-bikes').off()
+            $('#nav-manage-bikes').on('click', async function manageBikes() {
+                $('.admin-content').empty()
+                const response = await axios.get('/api/bikes')
+                let data = response.data
+                for (const bike of data) {
+                    const { _id, brand, model, price } = bike
+                    $('.admin-content').append(`
+                    <div class="bike-item">
+                        <span>
+                        id: ${_id} <br>
+                        brand: ${brand} <br>
+                        model: ${model} <br>
+                        price: ${price} <br>
+                        <button id="${_id}">Remove Item From Inventory</button>
+                        </span>
+                    </div>
+                    `)
+                    $(`#${_id}`).on('click', async function() {
+                        await axios.delete(`/api/bikes/${_id}`)
+                        manageBikes()
+                    })
+                }
+            })
+        
+            $('#nav-manage-accessories').off()
+            $('#nav-manage-accessories').on('click', async function manageAccessories() {
+                $('.admin-content').empty()
+                const response = await axios.get('/api/accessories')
+                let data = response.data
+                for (const accessory of data) {
+                    const { _id, brand, item, price } = accessory
+                    $('.admin-content').append(`
+                    <div class="accessory-item">
+                        <span>
+                        id: ${_id} <br>
+                        brand: ${brand} <br>
+                        item: ${item} <br>
+                        price: ${price} <br>
+                        <button id="${_id}">Remove Item From Inventory</button>
+                        </span>
+                    </div>
+                    `)
+                    $(`#${_id}`).on('click', async function() {
+                        await axios.delete(`/api/accessories/${_id}`)
+                        manageAccessories()
+                    })
+                }
+            })
+
+
             $('#nav-read-comments').off()
-            $('#nav-read-comments').on('click', async function() {
+            $('#nav-read-comments').on('click', async function loadComments() {
                 $('.admin-content').empty()
                 const response = await axios.get('/api/comments')
                 let data = response.data
                 for (const comment of data) {
-                    const { name, email, description } = comment
+                    const { name, email, description, _id } = comment
                     $('.admin-content').append(`
                     <div class="comment-item">
                         <p>Name: ${name}<p>
-                        
                         <p>Email: ${email}</p>
-                        
                         <p>Message: ${description}</p>
+                        <button class="delete-message-button" id="${_id}">Delete Message</button>
                     </div>
                     <br>
                     `)
+                    $(`#${_id}`).on('click', async function() {
+                        await axios.delete(`/api/comments/${_id}`)
+                        loadComments()
+                    })
                 }
             })
         } else {
             $('#invalid-login').css("display", "block")
         }
     })
-
-
-
-
-
 })
