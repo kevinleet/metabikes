@@ -165,12 +165,17 @@ $('#nav-contact-btn').on('click', function() {
     $('.contact-container').css("display", "flex")
 })
 
-$('#contact-submit-btn').on('click', function() {
+$('#contact-submit-btn').on('click', async function() {
     let name = $('#input-name').val()
     let email = $('#input-email').val()
     let message = $('#input-message').val()
     if (name && email && message) {
         console.log(name, email, message)
+        axios.post('/api/comments', {
+            name: name,
+            email: email,
+            message: message
+        })
         $('#please-fill').css("display", "none")
         $('.input-div').children().val("")
         alert('Thank you for submitting your messsage.')
