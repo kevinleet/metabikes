@@ -20,6 +20,23 @@ class Bike {
         <span>${this.brand} ${this.model}<br>${this.color}<br>${this.type} Bike, ${this.weight} lbs.<br>Price: ${this.price}<span>
         </div>`
     }
+
+    createProductPage() {
+        return `
+        <img src="${this.image}"/>
+        <span>
+        <h1>${this.brand}<h1>
+        <h2>${this.model}</h2>
+        <h4>Type: ${this.type}</h4>
+        <h4>Color: ${this.color}</h4>
+        <h4>Weight: ${this.weight}lbs</h4>
+        <br>
+        <h2>Price: ${this.price}</h2>
+        <button class="add-cart-btn" id="${this._id}">ADD TO CART</button>
+        <br>
+        <h4>${this.description}</h4>
+        </span>`
+    }
 }
 
 class Accessory {
@@ -40,6 +57,20 @@ class Accessory {
         <span>${this.brand}<br>${this.item}<br>Price: ${this.price}</span>
         </div>`
     }
+
+    createProductPage() {
+        return `
+        <img src="${this.img}"/>
+        <span>
+        <h1>${this.brand}<h1>
+        <h2>${this.item}</h2>
+        <br>
+        <h2>Price: ${this.price}</h2>
+        <button class="add-cart-btn" id="${this._id}">ADD TO CART</button>
+        <br>
+        <h4>${this.description}</h4>
+        </span>`
+    }
 }
 
 function formatNumberWithDollar(price) {
@@ -54,16 +85,14 @@ function formatNumberWithDollar(price) {
 
 
 $('#nav-home-btn').on('click', function () {
-    console.log('button click')
+    $('.container-wrapper').children().css("display", "none")
     $('.home-container').css("display", "flex")
-    $('.bikes-container, .accessories-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 })
 
 $('#nav-bikes-btn').on('click', async function () {
     $('.bikes-container').empty()
-
+    $('.container-wrapper').children().css("display", "none")
     $('.bikes-container').css("display", "grid")
-    $('.accessories-container, .home-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 
     let response = await axios.get('/api/bikes')
     let data = response.data
@@ -74,11 +103,26 @@ $('#nav-bikes-btn').on('click', async function () {
     }
 })
 
+$('.bikes-container').on('click', 'img', async function() {
+    $('.bike-product-container').empty()
+    $('.container-wrapper').children().css("display", "none")
+    $('.bike-product-container').css("display", "flex")
+    let id = $(this).prop("id")
+    const response = await axios.get(`/api/bikes/${id}`)
+    let data = response.data
+    const { _id, type, brand, model, price, color, weight, image, description } = data
+    let bike = new Bike(_id, type, brand, model, price, color, weight, image, description)
+    $('.bike-product-container').append(bike.createProductPage())
+    $('.add-cart-btn').on('click', function() {
+        let id = $(this).prop("id")
+        console.log(`${id} button pressed`)
+    })
+})
+
 $('#nav-accessories-btn').on('click', async function () {
     $('.accessories-container').empty()
-
+    $('.container-wrapper').children().css("display", "none")
     $('.accessories-container').css("display", "grid")
-    $('.home-container, .bikes-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 
     let response = await axios.get('/api/accessories')
     let data = response.data
@@ -87,31 +131,51 @@ $('#nav-accessories-btn').on('click', async function () {
         const newAccessory = new Accessory(_id, type, brand, item, price, img, description)
         $('.accessories-container').append(newAccessory.createDiv())
     }
+})
 
+$('.accessories-container').on('click', 'img', async function() {
+    $('.accessory-product-container').empty()
+    $('.container-wrapper').children().css("display", "none")
+    $('.accessory-product-container').css("display", "flex")
+    let id = $(this).prop("id")
+    const response = await axios.get(`/api/accessories/${id}`)
+    let data = response.data
+    console.log(data)
+    const { _id, type, brand, item, price, img, description } = data
+    let accessory = new Accessory(_id, type, brand, item, price, img, description)
+    $('.accessory-product-container').append(accessory.createProductPage())
+    $('.add-cart-btn').on('click', function() {
+        let id = $(this).prop("id")
+        console.log(`${id} button pressed`)
+    })
 })
 
 $('#admin-login-btn').on('click', function () {
+    $('.container-wrapper').children().css("display", "none")
     $('.admin-container').css("display", "flex")
-    $('.home-container, .bikes-container, .accessories-container, .cart-container, .contact-container').css("display", "none")
-
 })
 
 $('#cart-img').on('click', function() {
+    $('.container-wrapper').children().css("display", "none")
     $('.cart-container').css("display", "flex")
-    $('.admin-container, .home-container, .bikes-container, .accessories-container, .contact-container').css("display", "none")
 })
 
 $('#nav-contact-btn').on('click', function() {
+    $('.container-wrapper').children().css("display", "none")
     $('.contact-container').css("display", "flex")
-    $('.admin-container, .home-container, .bikes-container, .accessories-container, .cart-container').css("display", "none")
 })
 
-$('#contact-submit-btn').on('click', function() {
+$('#contact-submit-btn').on('click', async function() {
     let name = $('#input-name').val()
     let email = $('#input-email').val()
     let message = $('#input-message').val()
     if (name && email && message) {
         console.log(name, email, message)
+        axios.post('/api/comments', {
+            name: name,
+            email: email,
+            message: message
+        })
         $('#please-fill').css("display", "none")
         $('.input-div').children().val("")
         alert('Thank you for submitting your messsage.')
