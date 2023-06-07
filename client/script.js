@@ -17,7 +17,7 @@ class Bike {
         return `<div class="bike-grid-item">
         <img id="${this._id}" src="${this.image}"/>
         <br>
-        <span>${this.brand}<br>${this.model}<br>Type: ${this.type}<br>Price: ${this.price}<span>
+        <span>${this.brand} ${this.model}<br>${this.color}<br>${this.type} Bike, ${this.weight} lbs.<br>Price: ${this.price}<span>
         </div>`
     }
 }
@@ -56,14 +56,14 @@ function formatNumberWithDollar(price) {
 $('#nav-home-btn').on('click', function () {
     console.log('button click')
     $('.home-container').css("display", "flex")
-    $('.bikes-container, .accessories-container, .admin-container, .cart-container').css("display", "none")
+    $('.bikes-container, .accessories-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 })
 
 $('#nav-bikes-btn').on('click', async function () {
     $('.bikes-container').empty()
 
     $('.bikes-container').css("display", "grid")
-    $('.accessories-container, .home-container, .admin-container, .cart-container').css("display", "none")
+    $('.accessories-container, .home-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 
     let response = await axios.get('/api/bikes')
     let data = response.data
@@ -78,7 +78,7 @@ $('#nav-accessories-btn').on('click', async function () {
     $('.accessories-container').empty()
 
     $('.accessories-container').css("display", "grid")
-    $('.home-container, .bikes-container, .admin-container, .cart-container').css("display", "none")
+    $('.home-container, .bikes-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 
     let response = await axios.get('/api/accessories')
     let data = response.data
@@ -91,14 +91,32 @@ $('#nav-accessories-btn').on('click', async function () {
 })
 
 $('#admin-login-btn').on('click', function () {
-
-
     $('.admin-container').css("display", "flex")
-    $('.home-container, .bikes-container, .accessories-container, .cart-container').css("display", "none")
+    $('.home-container, .bikes-container, .accessories-container, .cart-container, .contact-container').css("display", "none")
 
 })
 
 $('#cart-img').on('click', function() {
     $('.cart-container').css("display", "flex")
-    $('.admin-container, .home-container, .bikes-container, .accessories-container').css("display", "none")
+    $('.admin-container, .home-container, .bikes-container, .accessories-container, .contact-container').css("display", "none")
+})
+
+$('#nav-contact-btn').on('click', function() {
+    $('.contact-container').css("display", "flex")
+    $('.admin-container, .home-container, .bikes-container, .accessories-container, .cart-container').css("display", "none")
+})
+
+$('#contact-submit-btn').on('click', function() {
+    let name = $('#input-name').val()
+    let email = $('#input-email').val()
+    let message = $('#input-message').val()
+    if (name && email && message) {
+        console.log(name, email, message)
+        $('#please-fill').css("display", "none")
+        $('.input-div').children().val("")
+        alert('Thank you for submitting your messsage.')
+    } else {
+        $('#please-fill').css("display", "block")
+    }
+
 })
