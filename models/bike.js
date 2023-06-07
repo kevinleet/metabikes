@@ -1,18 +1,19 @@
-const  { Schema } = require('mongoose')
+const { Schema } = require("mongoose");
 
-const bikeSchema = new Schema (
+const bikeSchema = new Schema(
     {
-        type: {type: String, require: true},
-        brand: {type: String, require: true},
-        model: {type: String, require: true},
-        price: {type: Number, require: true},
-        color: {type: String, require: true},
-        weight: {type: Number, require: true},
-        description: {type: String, require: true},
-        img: {type: String, require: true},
+        type: { type: String, require: true },
+        brand: { type: String, require: true },
+        model: { type: String, require: true },
+        price: { type: Number, require: true },
+        color: { type: String, require: true },
+        weight: { type: Number, require: true },
+        description: { type: String, require: true },
+        img: { type: String, require: true },
+        category: { type: String, require: true },
     },
 
-    {timestamps: true}
-)
+    { timestamps: true }
+);
 
-module.exports = bikeSchema
+module.exports = bikeSchema;
