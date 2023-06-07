@@ -143,6 +143,48 @@
         width: 452px;
     }
     
+    .bike-product-container {
+        margin: 0 auto;
+        width: 80%;
+        height: auto;
+        display: none;
+        flex-direction: row;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .bike-product-container img {
+        width: 700px;
+        object-fit: contain;
+        align-self: center;
+        background-color: #f3f0f1;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .bike-product-container span {
+        margin-left: 50px;
+        align-self: center;
+    }
+
+    .bike-product-container h2 {
+        margin-bottom: 10px;
+    }
+    
+    .bike-product-container h3, h4 {
+        margin: 0;
+    }
+
+    .bike-product-container button {
+        margin-bottom: 30px;
+        padding: 10px;
+        width: 170px;
+        height: 50px;
+        font-size: 1.3em;
+        font-weight: bold;
+        background-color: rgb(27, 177, 27);
+        color: white
+    }
+
     .accessories-container {
         margin: 0 auto;
         width: 80%;

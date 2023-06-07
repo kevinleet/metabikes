@@ -20,6 +20,23 @@ class Bike {
         <span>${this.brand} ${this.model}<br>${this.color}<br>${this.type} Bike, ${this.weight} lbs.<br>Price: ${this.price}<span>
         </div>`
     }
+
+    createProductPage() {
+        return `
+        <img src="${this.image}"/>
+        <span>
+        <h1>${this.brand}<h1>
+        <h2>${this.model}</h2>
+        <h4>Type: ${this.type}</h4>
+        <h4>Color: ${this.color}</h4>
+        <h4>Weight: ${this.weight}lbs</h4>
+        <br>
+        <h2>Price: ${this.price}</h2>
+        <button>ADD TO CART</button>
+        <br>
+        <h4>${this.description}</h4>
+        </span>`
+    }
 }
 
 class Accessory {
@@ -54,16 +71,14 @@ function formatNumberWithDollar(price) {
 
 
 $('#nav-home-btn').on('click', function () {
-    console.log('button click')
+    $('.container-wrapper').children().css("display", "none")
     $('.home-container').css("display", "flex")
-    $('.bikes-container, .accessories-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 })
 
 $('#nav-bikes-btn').on('click', async function () {
     $('.bikes-container').empty()
-
+    $('.container-wrapper').children().css("display", "none")
     $('.bikes-container').css("display", "grid")
-    $('.accessories-container, .home-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 
     let response = await axios.get('/api/bikes')
     let data = response.data
@@ -74,11 +89,23 @@ $('#nav-bikes-btn').on('click', async function () {
     }
 })
 
+$('.bikes-container').on('click', 'img', async function() {
+    $('.bike-product-container').empty()
+    $('.container-wrapper').children().css("display", "none")
+    $('.bike-product-container').css("display", "flex")
+    let id = $(this).prop("id")
+    const response = await axios.get(`/api/bikes/${id}`)
+    let data = response.data
+    const { _id, type, brand, model, price, color, weight, image, description } = data
+    console.log(data)
+    let bike = new Bike(_id, type, brand, model, price, color, weight, image, description)
+    $('.bike-product-container').append(bike.createProductPage())
+})
+
 $('#nav-accessories-btn').on('click', async function () {
     $('.accessories-container').empty()
-
+    $('.container-wrapper').children().css("display", "none")
     $('.accessories-container').css("display", "grid")
-    $('.home-container, .bikes-container, .admin-container, .cart-container, .contact-container').css("display", "none")
 
     let response = await axios.get('/api/accessories')
     let data = response.data
@@ -91,19 +118,18 @@ $('#nav-accessories-btn').on('click', async function () {
 })
 
 $('#admin-login-btn').on('click', function () {
+    $('.container-wrapper').children().css("display", "none")
     $('.admin-container').css("display", "flex")
-    $('.home-container, .bikes-container, .accessories-container, .cart-container, .contact-container').css("display", "none")
-
 })
 
 $('#cart-img').on('click', function() {
+    $('.container-wrapper').children().css("display", "none")
     $('.cart-container').css("display", "flex")
-    $('.admin-container, .home-container, .bikes-container, .accessories-container, .contact-container').css("display", "none")
 })
 
 $('#nav-contact-btn').on('click', function() {
+    $('.container-wrapper').children().css("display", "none")
     $('.contact-container').css("display", "flex")
-    $('.admin-container, .home-container, .bikes-container, .accessories-container, .cart-container').css("display", "none")
 })
 
 $('#contact-submit-btn').on('click', function() {
