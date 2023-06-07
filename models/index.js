@@ -7,6 +7,6 @@ const cartSchema = require("./cart");
 const Bike = mongoose.model("Bike", bikeSchema);
 const Accessory = mongoose.model("Accessory", accessorySchema);
 const Comment = mongoose.model("Comment", commentSchema);
-const Cart = mongoose.model("Cart", cartSchema);
+const CartItem = mongoose.model("CartItem", cartItemSchema);
 
-module.exports = { Bike, Accessory, Comment, Cart };
+module.exports = { Bike, Accessory, Comment, CartItem };
