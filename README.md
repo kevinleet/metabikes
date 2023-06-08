@@ -47,7 +47,7 @@ Leave a comment.
 <details>
 
 <details>
-    <summery>accessory</summery>
+    <summary>Accessory</summary>
 
     
      Accessories like bikes, stores all the data a shopper will need to know and is also a parent to cartitem. Accessories fields are:
@@ -63,7 +63,7 @@ Leave a comment.
 </details>
 
 <details>
-    <summery>cartitem</summery>
+    <summary>Cartitem</summary>
 
 
      The cartitem model is the child of both bike and accessory in a many to one relationship. Takes the ID of any bike or accessory and displays them in the cart. Fields are: 
@@ -75,7 +75,7 @@ Leave a comment.
 </details>
 
 <details>
-    <summery>comment</summery>
+    <summary>Comment</summary>
 
 
     Finally the comment mode allows shoppers to leave comments about the page. It takes thestrings generated on the front end to display messages on the admin page. Fields displayed. 
