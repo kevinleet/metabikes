@@ -1,6 +1,9 @@
 # META BIKES
 
+---
+
 Zuckerberg's very own e-commerce site specializing in high end bicycles and accessories.
+
 ![logo](./client/imgs/logo.png)
 
 
@@ -26,7 +29,8 @@ Leave a comment.
 
 ## Modules 
 
-<Bike>
+<bike>
+    <summery>Bike</summery>
 
     ### Bike
     The Bike model stores all fields of data that might be relavent to a potential shopper. It is the parent to our cartitem object and contains the fields: 
@@ -39,7 +43,7 @@ Leave a comment.
     description: String
     img: String
     category: String 
-s
+
 </bike>
 
 <accessories>
