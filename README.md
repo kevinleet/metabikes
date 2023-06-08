@@ -29,35 +29,35 @@ Leave a comment.
 
 ## Modules 
 
-<bike>
+<details>
     <summery>Bike</summery>
 
-    ### Bike
+     
     The Bike model stores all fields of data that might be relavent to a potential shopper. It is the parent to our cartitem object and contains the fields: 
-    type: String
-    brand: String
-    model: String
-    price: Number
-    color: String
-    weight: Number
-    description: String
-    img: String
-    category: String 
+    - type: String
+    - brand: String
+    - model: String
+    - price: Number
+    - color: String
+    - weight: Number
+    - description: String
+    - img: String
+    - category: String 
 
-</bike>
+<details>
 
-<accessories>
-    <summery>###accessory</summery>
+<details>
+    <summery>accessory</summery>
 
-     ## accessory 
+    
      Accessories like bikes, stores all the data a shopper will need to know and is also a parent to cartitem. Accessories fields are:
-    type: String 
-    brand: String
-    item: String
-    price: Number
-    img: String
-    description: String 
-    category: String 
+    - type: String 
+    - brand: String
+    - item: String
+    - price: Number
+    - img: String
+    - description: String 
+    - category: String 
      
 
 </details>
@@ -65,14 +65,24 @@ Leave a comment.
 <details>
     <summery>cartitem</summery>
 
-     ## cartitem
+
+     The cartitem model is the child of both bike and accessory in a many to one relationship. Takes the ID of any bike or accessory and displays them in the cart. Fields are: 
+   - bicycleID : bike id 
+   - accessoryID: accessory id 
+   - quantity : Number 
+
 
 </details>
 
 <details>
     <summery>comment</summery>
 
-     ## comment
+
+    Finally the comment mode allows shoppers to leave comments about the page. It takes thestrings generated on the front end to display messages on the admin page. Fields displayed. 
+  - name: String 
+  - email : String
+  - description : String 
+     
 </details>
 
 
