@@ -1,1984 +1,2102 @@
 @media only screen and (min-width: 1600px) {
-    body {
-        margin: 0;
-    }
-    
-    .top-bar {
-        background-color: #4267B2;
-        width: 100%;
-        height: 60px;
-        margin-left: 0px;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    .top-bar span {
-        align-self: flex-end;
-        margin-bottom: 5px;
-        margin-right: 10px;
-        color: white;
-        cursor: pointer;
-        font-family: 'Nunito', sans-serif;
-        font-size: 0.9em;
-    }
-    
-    .top-bar span:hover {
-        text-decoration: underline;
-    }
-    
-    .second-bar {
-        margin-bottom: 50px;
-        width: 100%;
-        height: 60px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .second-bar h1 {
-        margin-left: 20px;
-        color: #2a4f9a;
-        font-size: 2em;
-        font-family: 'Fugaz One', cursive;
-        align-self: center;
-    }
-    
-    .second-bar img {
-        margin-right: 5%;
-        width: 28px;
-        height: 25px;
-        align-self: center;
-        cursor: pointer;
-    }
+  body {
+    margin: 0;
+  }
 
-    .second-bar img:hover {
-        animation: cartShakeHover 0.5s;
-    }
+  .top-bar {
+    background-color: #4267b2;
+    width: 100%;
+    height: 60px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    @keyframes cartShakeHover {
-        0% {transform: rotate(0deg)}
-        20% {transform: rotate(10deg)}
-        50% {transform: rotate(0deg)}
-        80% {transform: rotate(-10deg)}
-        100% {transform: rotate(0deg)}
-    }
+  .top-bar span {
+    align-self: flex-end;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.9em;
+  }
 
-    @keyframes cartShake {
-        0% {transform: rotate(0deg)}
-        20%{transform: rotate(20deg) scale(1.2) }
-        25%{transform: rotate(0deg) scale(1.5) }
-        30% {transform: rotate(-20deg) scale(1.7)}
-        50% {transform: rotate(0deg) scale(2) }
-        70%{transform: rotate(20deg) scale(1.7) }
-        75%{transform: rotate(0deg) scale(1.5) }
-        80% {transform: rotate(-20deg) scale(1.2)}
-        100% {transform: rotate(0deg)}
-    }
-    
-    .navbar {
-        width: 50%;
-        max-width: 500px;
-    }
-    
-    .navbar ul {
-        padding-left: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    .navbar li {
-        margin-left: 0;
-        font-size: 1.1em;
-        font-family: 'Nunito', sans-serif;
-        cursor: pointer;
-    }
-    
-    .nav-button:hover {
-        color: #2a4f9a;
-        text-decoration: underline;
-    }
- 
-    .home-container {
-        margin: 0 auto;
-        width: 80%;
-        height: 500px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    
-    .home-container img {
-        height: 90%;
-        margin: 2%;
-        border-radius: 30px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .home-container div {
-        margin-left: 30px;
-        width: 500px;
-        text-align: center;
-    }
-    
-    .home-container p {
-        text-align: center;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1.8em;
-        line-height: 1.5em;
-        letter-spacing: 0.1em;
-    }
-    
-    .bikes-container {
-        margin: 0 auto;
-        width: 90%;
-        height: auto;
-        display: none;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    
-    .bike-grid-item {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 50px;
-        align-self: center;
-    }
-    
-    .bike-grid-item span {
-        margin-left: 10px;
-        font-size: 1.1em;
-        font-family: 'Nunito', sans-serif;
-    }
-    
-    .bike-grid-item img {
-        width: 450px;
-        object-fit: contain;
-        align-self: flex-start;
-        cursor: pointer;
-    }
-    
-    .bike-grid-item img:hover {
-        width: 452px;
-    }
-    
-    .bike-product-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: row;
-        font-family: 'Nunito', sans-serif;
-    }
+  .top-bar span:hover {
+    text-decoration: underline;
+  }
 
-    .bike-product-container img {
-        width: 700px;
-        object-fit: contain;
-        align-self: center;
-        background-color: #f3f0f1;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+  .second-bar {
+    margin-bottom: 50px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
-    .bike-product-container span {
-        margin-left: 50px;
-        align-self: center;
-    }
+  .second-bar h1 {
+    margin-left: 20px;
+    color: #2a4f9a;
+    font-size: 2em;
+    font-family: "Fugaz One", cursive;
+    align-self: center;
+  }
 
-    .bike-product-container h2 {
-        margin-bottom: 10px;
-    }
-    
-    .bike-product-container h3, h4 {
-        margin: 0;
-    }
+  .second-bar img {
+    margin-right: 5%;
+    width: 28px;
+    height: 25px;
+    align-self: center;
+    cursor: pointer;
+  }
 
-    .bike-product-container button {
-        margin-bottom: 30px;
-        padding: 10px;
-        width: 170px;
-        height: 50px;
-        font-size: 1.1em;
-        font-weight: bold;
-        background-color: rgb(27, 177, 27);
-        color: white
-    }
+  .second-bar img:hover {
+    animation: cartShakeHover 0.5s;
+  }
 
-    .accessories-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-content: space-around;
+  @keyframes cartShakeHover {
+    0% {
+      transform: rotate(0deg);
     }
-    
-    .accessory-grid-item {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 50px;
-        align-self: flex-end;
+    20% {
+      transform: rotate(10deg);
     }
-    
-    .accessory-grid-item span {
-        margin-left: 10px;
-        font-size: 1.1em;
-        font-family: 'Nunito', sans-serif;
+    50% {
+      transform: rotate(0deg);
     }
-    
-    .accessory-grid-item img {
-        width: 200px;
-        object-fit: contain;
-        align-self: flex-start;
-        cursor: pointer;
+    80% {
+      transform: rotate(-10deg);
     }
-    
-    .accessory-grid-item img:hover {
-       width: 202px;
+    100% {
+      transform: rotate(0deg);
     }
+  }
 
-    .accessory-product-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: row;
-        font-family: 'Nunito', sans-serif;
-        justify-content: center;
+  @keyframes cartShake {
+    0% {
+      transform: rotate(0deg);
     }
+    20% {
+      transform: rotate(20deg) scale(1.2);
+    }
+    25% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    30% {
+      transform: rotate(-20deg) scale(1.7);
+    }
+    50% {
+      transform: rotate(0deg) scale(2);
+    }
+    70% {
+      transform: rotate(20deg) scale(1.7);
+    }
+    75% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    80% {
+      transform: rotate(-20deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
-    .accessory-product-container img {
-        width: 350px;
-        object-fit: contain;
-        align-self: center;
-    }
+  .navbar {
+    width: 50%;
+    max-width: 500px;
+  }
 
-    .accessory-product-container span {
-        margin-left: 50px;
-        align-self: center;
-        width: 600px;
-    }
+  .navbar ul {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-    .accessory-product-container h2 {
-        margin-bottom: 10px;
-    }
-    
-    .accessory-product-container h3, h4 {
-        margin: 0;
-    }
+  .navbar li {
+    margin-left: 0;
+    font-size: 1.1em;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+  }
 
-    .accessory-product-container button {
-        margin-bottom: 30px;
-        padding: 10px;
-        width: 170px;
-        height: 50px;
-        font-size: 1.1em;
-        font-weight: bold;
-        background-color: rgb(27, 177, 27);
-        color: white
-    }
-    
-    .cart-container {
-        margin: 0 auto;
-        width: 80%;
-        min-height: 500px;
-        display: none;
-        font-family: 'Nunito', sans-serif;
-        flex-direction: column;
-        text-align: center;
-        align-content: center;
-    }
+  .nav-button:hover {
+    color: #2a4f9a;
+    text-decoration: underline;
+  }
 
-    .cart-container h1 {
-        margin-bottom: 40px;
-    }
+  .home-container {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-    .cart-contents {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .home-container img {
+    height: 90%;
+    margin: 2%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
-    .cart-item {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 40px;
-        justify-content: flex-end;
-        width: 700px;
-    }
+  .home-container div {
+    margin-left: 30px;
+    width: 500px;
+    text-align: center;
+  }
 
-    .cart-item img {
-        height: 200px;
-        min-width: 400px;
-        object-fit: contain;
-    }
+  .home-container p {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.8em;
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+  }
 
-    .cart-item span {
-        margin-left: 10px;
-        width: 200px;
-    }
+  .bikes-container {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
-    .cart-item button {
-        background-color: rgb(205, 26, 26);
-        color: white;
-        align-self: center;
-        height: 40px;
-    }
+  .bike-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 50px;
+    align-self: center;
+  }
 
-    .contact-container {
-        margin: 0 auto;
-        width: 80%;
-        height: 500px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        font-family: 'Nunito', sans-serif;
-    }
+  .bike-grid-item span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    font-family: "Nunito", sans-serif;
+  }
 
-    #input-name {
-        width: 300px;
-        height: 25px;
-        font-size: 1.2em;
-        padding-left: 5px;
-        margin-bottom: 15px;
-        font-family: monospace;
-    }
+  .bike-grid-item img {
+    width: 450px;
+    object-fit: contain;
+    align-self: flex-start;
+    cursor: pointer;
+  }
 
-    #input-email {
-        width: 300px;
-        height: 25px;
-        font-size: 1.2em;
-        padding-left: 5px;
-        margin-bottom: 15px;
-        font-family: monospace;
-    }
+  .bike-grid-item img:hover {
+    width: 452px;
+  }
 
-    #input-message {
-        font-size: 1.3em;
-    }
+  .bike-product-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: row;
+    font-family: "Nunito", sans-serif;
+  }
 
-    #contact-submit-btn {
-        margin-top: 10px;
-        width: 90px;
-        height: 25px;
-    }
+  .bike-product-container img {
+    width: 700px;
+    object-fit: contain;
+    align-self: center;
+    background-color: #f3f0f1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    .admin-container {
-        margin: 0 auto;
-        width: 80%;
-        min-height: 500px;
-        height: auto;
-        display: none;
-        flex-direction: column;
-    }
+  .bike-product-container span {
+    margin-left: 50px;
+    align-self: center;
+  }
 
-    .admin-container form {
-        margin: 0 auto;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .admin-container input {
-        margin-bottom: 10px;
-    }
+  .bike-product-container h2 {
+    margin-bottom: 10px;
+  }
 
-    .admin-homepage {
-        display: none;
-        flex-direction: column;
-        font-family: Arial, Helvetica, sans-serif
-    }
+  .bike-product-container h3,
+  h4 {
+    margin: 0;
+  }
 
-    .admin-homepage h2 {
-        text-align: center;
-        font-weight: bold;
-    }
+  .bike-product-container button {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: rgb(27, 177, 27);
+    color: white;
+  }
 
-    .admin-homepage ul {
-        margin: 0 auto;
-        list-style-type: none;
-        display: inline;
-    }
+  .accessories-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+  }
 
-    .admin-homepage li {
-        display: inline;
-        padding-left: 0;
-        margin-left: 25px;
-        margin-right: 25px;
-        cursor: pointer;
-    }
-    
-    .admin-homepage li:hover {
-        font-weight: bold;
-        text-decoration: underline;
-    }
+  .accessory-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 50px;
+    align-self: flex-end;
+  }
 
-    .admin-content {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
+  .accessory-grid-item span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    font-family: "Nunito", sans-serif;
+  }
 
-    .bike-item {
-        margin: 10px auto;
-        min-width: 400px;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-grid-item img {
+    width: 200px;
+    object-fit: contain;
+    align-self: flex-start;
+    cursor: pointer;
+  }
 
-    .bike-item button {
-        margin-top: 5px;
-    }
+  .accessory-grid-item img:hover {
+    width: 202px;
+  }
 
-    .accessory-item {
-        margin: 10px auto;
-        min-width: 400px;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-product-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: row;
+    font-family: "Nunito", sans-serif;
+    justify-content: center;
+  }
 
-    .accessory-item button {
-        margin-top: 5px;
-    }
+  .accessory-product-container img {
+    width: 350px;
+    object-fit: contain;
+    align-self: center;
+  }
 
-    .comment-item {
-        height: auto;
-        width: 600px;
-        margin: 0 auto;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-product-container span {
+    margin-left: 50px;
+    align-self: center;
+    width: 600px;
+  }
 
-    .comment-item p {
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    
-    .footer {
-        margin-top: 30px;
-        width: 100%;
-        height: 50px;
-        background-color: #2a4f9a;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-    
-    .footer span {
-        padding-bottom: 5px;
-    }
-    
-    .footer p {
-        margin: 0;
-        color: rgb(248, 248, 248);
-        font-size: 0.8em;
-        font-family: 'Nunito', sans-serif;
-    }
+  .accessory-product-container h2 {
+    margin-bottom: 10px;
+  }
+
+  .accessory-product-container h3,
+  h4 {
+    margin: 0;
+  }
+
+  .accessory-product-container button {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: rgb(27, 177, 27);
+    color: white;
+  }
+
+  .cart-container {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 500px;
+    display: none;
+    font-family: "Nunito", sans-serif;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+  }
+
+  .cart-container h1 {
+    margin-bottom: 40px;
+  }
+
+  .cart-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: flex-end;
+    width: 700px;
+  }
+
+  .cart-item img {
+    height: 200px;
+    min-width: 400px;
+    object-fit: contain;
+  }
+
+  .cart-item span {
+    margin-left: 10px;
+    width: 200px;
+  }
+
+  .cart-item button {
+    background-color: rgb(205, 26, 26);
+    color: white;
+    align-self: center;
+    height: 40px;
+  }
+
+  .contact-container {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Nunito", sans-serif;
+  }
+
+  #input-name {
+    width: 300px;
+    height: 25px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+  }
+
+  #input-email {
+    width: 300px;
+    height: 25px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+  }
+
+  #input-message {
+    font-size: 1.3em;
+  }
+
+  #contact-submit-btn {
+    margin-top: 10px;
+    width: 90px;
+    height: 25px;
+  }
+
+  .admin-container {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 500px;
+    height: auto;
+    display: none;
+    flex-direction: column;
+  }
+
+  .admin-container form {
+    margin: 0 auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .admin-container input {
+    margin-bottom: 10px;
+  }
+
+  .admin-homepage {
+    display: none;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .admin-homepage h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .admin-homepage ul {
+    margin: 0 auto;
+    list-style-type: none;
+    display: inline;
+  }
+
+  .admin-homepage li {
+    display: inline;
+    padding-left: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+  }
+
+  .admin-homepage li:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .admin-content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .bike-item {
+    margin: 10px auto;
+    min-width: 400px;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .bike-item button {
+    margin-top: 5px;
+  }
+
+  .accessory-item {
+    margin: 10px auto;
+    min-width: 400px;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .accessory-item button {
+    margin-top: 5px;
+  }
+
+  .comment-item {
+    height: auto;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .comment-item p {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    background-color: #2a4f9a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .footer span {
+    padding-bottom: 5px;
+  }
+
+  .footer p {
+    margin: 0;
+    color: rgb(248, 248, 248);
+    font-size: 0.8em;
+    font-family: "Nunito", sans-serif;
+  }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
-    body {
-        margin: 0;
-    }
-    
-    .top-bar {
-        background-color: #4267B2;
-        width: 100%;
-        height: 60px;
-        margin-left: 0px;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    .top-bar span {
-        align-self: flex-end;
-        margin-bottom: 5px;
-        margin-right: 10px;
-        color: white;
-        cursor: pointer;
-        font-family: 'Nunito', sans-serif;
-        font-size: 0.9em;
-    }
-    
-    .top-bar span:hover {
-        text-decoration: underline;
-    }
-    
-    .second-bar {
-        margin-bottom: 50px;
-        width: 100%;
-        height: 60px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .second-bar h1 {
-        margin-left: 20px;
-        color: #2a4f9a;
-        font-size: 2em;
-        font-family: 'Fugaz One', cursive;
-        align-self: center;
-    }
-    
-    .second-bar img {
-        margin-right: 5%;
-        width: 28px;
-        height: 25px;
-        align-self: center;
-        cursor: pointer;
-    }
+  body {
+    margin: 0;
+  }
 
-    .second-bar img:hover {
-        animation: cartShakeHover 0.5s;
-    }
+  .top-bar {
+    background-color: #4267b2;
+    width: 100%;
+    height: 60px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    @keyframes cartShakeHover {
-        0% {transform: rotate(0deg)}
-        20% {transform: rotate(10deg)}
-        50% {transform: rotate(0deg)}
-        80% {transform: rotate(-10deg)}
-        100% {transform: rotate(0deg)}
-    }
+  .top-bar span {
+    align-self: flex-end;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.9em;
+  }
 
-    @keyframes cartShake {
-        0% {transform: rotate(0deg)}
-        20%{transform: rotate(20deg) scale(1.2) }
-        25%{transform: rotate(0deg) scale(1.5) }
-        30% {transform: rotate(-20deg) scale(1.7)}
-        50% {transform: rotate(0deg) scale(2) }
-        70%{transform: rotate(20deg) scale(1.7) }
-        75%{transform: rotate(0deg) scale(1.5) }
-        80% {transform: rotate(-20deg) scale(1.2)}
-        100% {transform: rotate(0deg)}
-    }
-    
-    .navbar {
-        width: 50%;
-        max-width: 500px;
-    }
-    
-    .navbar ul {
-        padding-left: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    .navbar li {
-        margin-left: 0;
-        font-size: 1.1em;
-        font-family: 'Nunito', sans-serif;
-        cursor: pointer;
-    }
-    
-    .nav-button:hover {
-        color: #2a4f9a;
-        text-decoration: underline;
-    }
- 
-    .home-container {
-        margin: 0 auto;
-        width: 80%;
-        height: 500px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    
-    .home-container img {
-        height: 90%;
-        margin: 2%;
-        border-radius: 30px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .home-container div {
-        margin-left: 30px;
-        width: 500px;
-        text-align: center;
-    }
-    
-    .home-container p {
-        text-align: center;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1.8em;
-        line-height: 1.5em;
-        letter-spacing: 0.1em;
-    }
-    
-    .bikes-container {
-        margin: 0 auto;
-        width: 90%;
-        height: auto;
-        display: none;
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .bike-grid-item {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 50px;
-        align-self: center;
-    }
-    
-    .bike-grid-item span {
-        margin-left: 10px;
-        font-size: 1.1em;
-        font-family: 'Nunito', sans-serif;
-    }
-    
-    .bike-grid-item img {
-        width: 450px;
-        object-fit: contain;
-        align-self: flex-start;
-        cursor: pointer;
-    }
-    
-    .bike-grid-item img:hover {
-        width: 452px;
-    }
-    
-    .bike-product-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: row;
-        font-family: 'Nunito', sans-serif;
-    }
+  .top-bar span:hover {
+    text-decoration: underline;
+  }
 
-    .bike-product-container img {
-        width: 500px;
-        object-fit: contain;
-        align-self: center;
-        background-color: #f3f0f1;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+  .second-bar {
+    margin-bottom: 50px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
-    .bike-product-container span {
-        margin-left: 50px;
-        align-self: center;
-    }
+  .second-bar h1 {
+    margin-left: 20px;
+    color: #2a4f9a;
+    font-size: 2em;
+    font-family: "Fugaz One", cursive;
+    align-self: center;
+  }
 
-    .bike-product-container h2 {
-        margin-bottom: 10px;
-    }
-    
-    .bike-product-container h3, h4 {
-        margin: 0;
-    }
+  .second-bar img {
+    margin-right: 5%;
+    width: 28px;
+    height: 25px;
+    align-self: center;
+    cursor: pointer;
+  }
 
-    .bike-product-container button {
-        margin-bottom: 30px;
-        padding: 10px;
-        width: 170px;
-        height: 50px;
-        font-size: 1.1em;
-        font-weight: bold;
-        background-color: rgb(27, 177, 27);
-        color: white
-    }
+  .second-bar img:hover {
+    animation: cartShakeHover 0.5s;
+  }
 
-    .accessories-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-content: space-around;
+  @keyframes cartShakeHover {
+    0% {
+      transform: rotate(0deg);
     }
-    
-    .accessory-grid-item {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 50px;
-        align-self: flex-end;
+    20% {
+      transform: rotate(10deg);
     }
-    
-    .accessory-grid-item span {
-        margin-left: 10px;
-        font-size: 1.1em;
-        font-family: 'Nunito', sans-serif;
+    50% {
+      transform: rotate(0deg);
     }
-    
-    .accessory-grid-item img {
-        width: 200px;
-        object-fit: contain;
-        align-self: flex-start;
-        cursor: pointer;
+    80% {
+      transform: rotate(-10deg);
     }
-    
-    .accessory-grid-item img:hover {
-       width: 202px;
+    100% {
+      transform: rotate(0deg);
     }
+  }
 
-    .accessory-product-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: row;
-        font-family: 'Nunito', sans-serif;
-        justify-content: center;
+  @keyframes cartShake {
+    0% {
+      transform: rotate(0deg);
     }
+    20% {
+      transform: rotate(20deg) scale(1.2);
+    }
+    25% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    30% {
+      transform: rotate(-20deg) scale(1.7);
+    }
+    50% {
+      transform: rotate(0deg) scale(2);
+    }
+    70% {
+      transform: rotate(20deg) scale(1.7);
+    }
+    75% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    80% {
+      transform: rotate(-20deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
-    .accessory-product-container img {
-        width: 300px;
-        object-fit: contain;
-        align-self: center;
-    }
+  .navbar {
+    width: 50%;
+    max-width: 500px;
+  }
 
-    .accessory-product-container span {
-        margin-left: 50px;
-        align-self: center;
-        width: 600px;
-    }
+  .navbar ul {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-    .accessory-product-container h2 {
-        margin-bottom: 10px;
-    }
-    
-    .accessory-product-container h3, h4 {
-        margin: 0;
-    }
+  .navbar li {
+    margin-left: 0;
+    font-size: 1.1em;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+  }
 
-    .accessory-product-container button {
-        margin-bottom: 30px;
-        padding: 10px;
-        width: 170px;
-        height: 50px;
-        font-size: 1.1em;
-        font-weight: bold;
-        background-color: rgb(27, 177, 27);
-        color: white
-    }
-    
-    .cart-container {
-        margin: 0 auto;
-        width: 80%;
-        min-height: 500px;
-        display: none;
-        font-family: 'Nunito', sans-serif;
-        flex-direction: column;
-        text-align: center;
-        align-content: center;
-    }
+  .nav-button:hover {
+    color: #2a4f9a;
+    text-decoration: underline;
+  }
 
-    .cart-container h1 {
-        margin-bottom: 40px;
-    }
+  .home-container {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-    .cart-contents {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .home-container img {
+    height: 90%;
+    margin: 2%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
-    .cart-item {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 40px;
-        justify-content: flex-end;
-        width: 700px;
-    }
+  .home-container div {
+    margin-left: 30px;
+    width: 500px;
+    text-align: center;
+  }
 
-    .cart-item img {
-        height: 200px;
-        min-width: 400px;
-        object-fit: contain;
-    }
+  .home-container p {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.8em;
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+  }
 
-    .cart-item span {
-        margin-left: 10px;
-        width: 200px;
-    }
+  .bikes-container {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+  }
 
-    .cart-item button {
-        background-color: rgb(205, 26, 26);
-        color: white;
-        align-self: center;
-        height: 40px;
-    }
+  .bike-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 50px;
+    align-self: center;
+  }
 
-    .contact-container {
-        margin: 0 auto;
-        width: 80%;
-        height: 500px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        font-family: 'Nunito', sans-serif;
-    }
+  .bike-grid-item span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    font-family: "Nunito", sans-serif;
+  }
 
-    #input-name {
-        width: 300px;
-        height: 25px;
-        font-size: 1.2em;
-        padding-left: 5px;
-        margin-bottom: 15px;
-        font-family: monospace;
-    }
+  .bike-grid-item img {
+    width: 450px;
+    object-fit: contain;
+    align-self: flex-start;
+    cursor: pointer;
+  }
 
-    #input-email {
-        width: 300px;
-        height: 25px;
-        font-size: 1.2em;
-        padding-left: 5px;
-        margin-bottom: 15px;
-        font-family: monospace;
-    }
+  .bike-grid-item img:hover {
+    width: 452px;
+  }
 
-    #input-message {
-        font-size: 1.3em;
-    }
+  .bike-product-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: row;
+    font-family: "Nunito", sans-serif;
+  }
 
-    #contact-submit-btn {
-        margin-top: 10px;
-        width: 90px;
-        height: 25px;
-    }
+  .bike-product-container img {
+    width: 500px;
+    object-fit: contain;
+    align-self: center;
+    background-color: #f3f0f1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    .admin-container {
-        margin: 0 auto;
-        width: 80%;
-        min-height: 500px;
-        height: auto;
-        display: none;
-        flex-direction: column;
-    }
+  .bike-product-container span {
+    margin-left: 50px;
+    align-self: center;
+  }
 
-    .admin-container form {
-        margin: 0 auto;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .admin-container input {
-        margin-bottom: 10px;
-    }
+  .bike-product-container h2 {
+    margin-bottom: 10px;
+  }
 
-    .admin-homepage {
-        display: none;
-        flex-direction: column;
-        font-family: Arial, Helvetica, sans-serif
-    }
+  .bike-product-container h3,
+  h4 {
+    margin: 0;
+  }
 
-    .admin-homepage h2 {
-        text-align: center;
-        font-weight: bold;
-    }
+  .bike-product-container button {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: rgb(27, 177, 27);
+    color: white;
+  }
 
-    .admin-homepage ul {
-        margin: 0 auto;
-        list-style-type: none;
-        display: inline;
-    }
+  .accessories-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+  }
 
-    .admin-homepage li {
-        display: inline;
-        padding-left: 0;
-        margin-left: 25px;
-        margin-right: 25px;
-        cursor: pointer;
-    }
-    
-    .admin-homepage li:hover {
-        font-weight: bold;
-        text-decoration: underline;
-    }
+  .accessory-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 50px;
+    align-self: flex-end;
+  }
 
-    .admin-content {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
+  .accessory-grid-item span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    font-family: "Nunito", sans-serif;
+  }
 
-    .bike-item {
-        margin: 10px auto;
-        min-width: 400px;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-grid-item img {
+    width: 200px;
+    object-fit: contain;
+    align-self: flex-start;
+    cursor: pointer;
+  }
 
-    .bike-item button {
-        margin-top: 5px;
-    }
+  .accessory-grid-item img:hover {
+    width: 202px;
+  }
 
-    .accessory-item {
-        margin: 10px auto;
-        min-width: 400px;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-product-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: row;
+    font-family: "Nunito", sans-serif;
+    justify-content: center;
+  }
 
-    .accessory-item button {
-        margin-top: 5px;
-    }
+  .accessory-product-container img {
+    width: 300px;
+    object-fit: contain;
+    align-self: center;
+  }
 
-    .comment-item {
-        height: auto;
-        width: 600px;
-        margin: 0 auto;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-product-container span {
+    margin-left: 50px;
+    align-self: center;
+    width: 600px;
+  }
 
-    .comment-item p {
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    
-    .footer {
-        margin-top: 30px;
-        width: 100%;
-        height: 50px;
-        background-color: #2a4f9a;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-    
-    .footer span {
-        padding-bottom: 5px;
-    }
-    
-    .footer p {
-        margin: 0;
-        color: rgb(248, 248, 248);
-        font-size: 0.8em;
-        font-family: 'Nunito', sans-serif;
-    }
+  .accessory-product-container h2 {
+    margin-bottom: 10px;
+  }
+
+  .accessory-product-container h3,
+  h4 {
+    margin: 0;
+  }
+
+  .accessory-product-container button {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: rgb(27, 177, 27);
+    color: white;
+  }
+
+  .cart-container {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 500px;
+    display: none;
+    font-family: "Nunito", sans-serif;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+  }
+
+  .cart-container h1 {
+    margin-bottom: 40px;
+  }
+
+  .cart-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: flex-end;
+    width: 700px;
+  }
+
+  .cart-item img {
+    height: 200px;
+    min-width: 400px;
+    object-fit: contain;
+  }
+
+  .cart-item span {
+    margin-left: 10px;
+    width: 200px;
+  }
+
+  .cart-item button {
+    background-color: rgb(205, 26, 26);
+    color: white;
+    align-self: center;
+    height: 40px;
+  }
+
+  .contact-container {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Nunito", sans-serif;
+  }
+
+  #input-name {
+    width: 300px;
+    height: 25px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+  }
+
+  #input-email {
+    width: 300px;
+    height: 25px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+  }
+
+  #input-message {
+    font-size: 1.3em;
+  }
+
+  #contact-submit-btn {
+    margin-top: 10px;
+    width: 90px;
+    height: 25px;
+  }
+
+  .admin-container {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 500px;
+    height: auto;
+    display: none;
+    flex-direction: column;
+  }
+
+  .admin-container form {
+    margin: 0 auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .admin-container input {
+    margin-bottom: 10px;
+  }
+
+  .admin-homepage {
+    display: none;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .admin-homepage h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .admin-homepage ul {
+    margin: 0 auto;
+    list-style-type: none;
+    display: inline;
+  }
+
+  .admin-homepage li {
+    display: inline;
+    padding-left: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+  }
+
+  .admin-homepage li:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .admin-content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .bike-item {
+    margin: 10px auto;
+    min-width: 400px;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .bike-item button {
+    margin-top: 5px;
+  }
+
+  .accessory-item {
+    margin: 10px auto;
+    min-width: 400px;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .accessory-item button {
+    margin-top: 5px;
+  }
+
+  .comment-item {
+    height: auto;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .comment-item p {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    background-color: #2a4f9a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .footer span {
+    padding-bottom: 5px;
+  }
+
+  .footer p {
+    margin: 0;
+    color: rgb(248, 248, 248);
+    font-size: 0.8em;
+    font-family: "Nunito", sans-serif;
+  }
 }
 
-
 @media only screen and (min-width: 800px) and (max-width: 1199px) {
-    body {
-        margin: 0;
-    }
-    
-    .top-bar {
-        background-color: #4267B2;
-        width: 100%;
-        height: 60px;
-        margin-left: 0px;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    .top-bar span {
-        align-self: flex-end;
-        margin-bottom: 5px;
-        margin-right: 10px;
-        color: white;
-        cursor: pointer;
-        font-family: 'Nunito', sans-serif;
-        font-size: 0.9em;
-    }
-    
-    .top-bar span:hover {
-        text-decoration: underline;
-    }
-    
-    .second-bar {
-        margin-bottom: 50px;
-        width: 100%;
-        height: 60px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .second-bar h1 {
-        margin-left: 20px;
-        color: #2a4f9a;
-        font-size: 2em;
-        font-family: 'Fugaz One', cursive;
-        align-self: center;
-    }
-    
-    .second-bar img {
-        margin-right: 5%;
-        width: 28px;
-        height: 25px;
-        align-self: center;
-        cursor: pointer;
-    }
+  body {
+    margin: 0;
+  }
 
-    .second-bar img:hover {
-        animation: cartShakeHover 0.5s;
-    }
+  .top-bar {
+    background-color: #4267b2;
+    width: 100%;
+    height: 60px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    @keyframes cartShakeHover {
-        0% {transform: rotate(0deg)}
-        20% {transform: rotate(10deg)}
-        50% {transform: rotate(0deg)}
-        80% {transform: rotate(-10deg)}
-        100% {transform: rotate(0deg)}
-    }
+  .top-bar span {
+    align-self: flex-end;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.9em;
+  }
 
-    @keyframes cartShake {
-        0% {transform: rotate(0deg)}
-        20%{transform: rotate(20deg) scale(1.2) }
-        25%{transform: rotate(0deg) scale(1.5) }
-        30% {transform: rotate(-20deg) scale(1.7)}
-        50% {transform: rotate(0deg) scale(2) }
-        70%{transform: rotate(20deg) scale(1.7) }
-        75%{transform: rotate(0deg) scale(1.5) }
-        80% {transform: rotate(-20deg) scale(1.2)}
-        100% {transform: rotate(0deg)}
-    }
-    
-    .navbar {
-        width: 50%;
-        max-width: 500px;
-    }
-    
-    .navbar ul {
-        padding-left: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    .navbar li {
-        margin-left: 0;
-        font-size: 1.0em;
-        font-family: 'Nunito', sans-serif;
-        cursor: pointer;
-    }
-    
-    .nav-button:hover {
-        color: #2a4f9a;
-        text-decoration: underline;
-    }
- 
-    .home-container {
-        margin: 0 auto;
-        width: 80%;
-        height: 500px;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-    }
-    
-    .home-container img {
-        height: 80%;
-        margin: 2%;
-        border-radius: 30px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .home-container div {
-        margin-left: 30px;
-        width: 500px;
-        text-align: center;
-    }
-    
-    .home-container p {
-        text-align: center;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1.5em;
-        line-height: 1.3em;
-        letter-spacing: 0.1em;
-    }
-    
-    .bikes-container {
-        margin: 0 auto;
-        width: 90%;
-        height: auto;
-        display: none;
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .bike-grid-item {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 50px;
-        align-self: center;
-    }
-    
-    .bike-grid-item span {
-        margin-left: 10px;
-        font-size: 1.0em;
-        font-family: 'Nunito', sans-serif;
-    }
-    
-    .bike-grid-item img {
-        width: 300px;
-        object-fit: contain;
-        align-self: flex-start;
-        cursor: pointer;
-    }
-    
-    .bike-grid-item img:hover {
-        width: 302px;
-    }
-    
-    .bike-product-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: row;
-        font-family: 'Nunito', sans-serif;
-        font-size: 0.8em
-    }
+  .top-bar span:hover {
+    text-decoration: underline;
+  }
 
-    .bike-product-container img {
-        width: 350px;
-        object-fit: contain;
-        align-self: center;
-        background-color: #f3f0f1;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+  .second-bar {
+    margin-bottom: 50px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
-    .bike-product-container span {
-        margin-left: 30px;
-        align-self: center;
-    }
+  .second-bar h1 {
+    margin-left: 20px;
+    color: #2a4f9a;
+    font-size: 2em;
+    font-family: "Fugaz One", cursive;
+    align-self: center;
+  }
 
-    .bike-product-container h2 {
-        margin-bottom: 10px;
-    }
-    
-    .bike-product-container h3, h4 {
-        margin: 0;
-    }
+  .second-bar img {
+    margin-right: 5%;
+    width: 28px;
+    height: 25px;
+    align-self: center;
+    cursor: pointer;
+  }
 
-    .bike-product-container button {
-        margin-bottom: 30px;
-        padding: 10px;
-        width: 170px;
-        height: 50px;
-        font-size: 1.1em;
-        font-weight: bold;
-        background-color: rgb(27, 177, 27);
-        color: white
-    }
+  .second-bar img:hover {
+    animation: cartShakeHover 0.5s;
+  }
 
-    .accessories-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        justify-content: space-around;
+  @keyframes cartShakeHover {
+    0% {
+      transform: rotate(0deg);
     }
-    
-    .accessory-grid-item {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 50px;
-        align-self: flex-end;
+    20% {
+      transform: rotate(10deg);
     }
-    
-    .accessory-grid-item span {
-        margin-left: 10px;
-        font-size: 1.0em;
-        font-family: 'Nunito', sans-serif;
+    50% {
+      transform: rotate(0deg);
     }
-    
-    .accessory-grid-item img {
-        width: 160px;
-        object-fit: contain;
-        align-self: flex-start;
-        cursor: pointer;
+    80% {
+      transform: rotate(-10deg);
     }
-    
-    .accessory-grid-item img:hover {
-       width: 162px;
+    100% {
+      transform: rotate(0deg);
     }
+  }
 
-    .accessory-product-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: row;
-        font-family: 'Nunito', sans-serif;
-        justify-content: center;
-        font-size: 0.8em
+  @keyframes cartShake {
+    0% {
+      transform: rotate(0deg);
     }
+    20% {
+      transform: rotate(20deg) scale(1.2);
+    }
+    25% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    30% {
+      transform: rotate(-20deg) scale(1.7);
+    }
+    50% {
+      transform: rotate(0deg) scale(2);
+    }
+    70% {
+      transform: rotate(20deg) scale(1.7);
+    }
+    75% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    80% {
+      transform: rotate(-20deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
-    .accessory-product-container img {
-        width: 250px;
-        object-fit: contain;
-        align-self: center;
-    }
+  .navbar {
+    width: 50%;
+    max-width: 500px;
+  }
 
-    .accessory-product-container span {
-        margin-left: 30px;
-        align-self: center;
-        width: 600px;
-    }
+  .navbar ul {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-    .accessory-product-container h2 {
-        margin-bottom: 10px;
-    }
-    
-    .accessory-product-container h3, h4 {
-        margin: 0;
-    }
+  .navbar li {
+    margin-left: 0;
+    font-size: 1em;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+  }
 
-    .accessory-product-container button {
-        margin-bottom: 30px;
-        padding: 10px;
-        width: 170px;
-        height: 50px;
-        font-size: 1.1em;
-        font-weight: bold;
-        background-color: rgb(27, 177, 27);
-        color: white
-    }
-    
-    .cart-container {
-        margin: 0 auto;
-        width: 80%;
-        min-height: 500px;
-        display: none;
-        font-family: 'Nunito', sans-serif;
-        flex-direction: column;
-        text-align: center;
-        align-content: center;
-    }
+  .nav-button:hover {
+    color: #2a4f9a;
+    text-decoration: underline;
+  }
 
-    .cart-container h1 {
-        margin-bottom: 40px;
-    }
+  .home-container {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 
-    .cart-contents {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .home-container img {
+    height: 80%;
+    margin: 2%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
-    .cart-item {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 40px;
-        justify-content: flex-end;
-        width: 500px;
-    }
+  .home-container div {
+    margin-left: 30px;
+    width: 500px;
+    text-align: center;
+  }
 
-    .cart-item img {
-        height: 150px;
-        min-width: 300px;
-        object-fit: contain;
-    }
+  .home-container p {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.5em;
+    line-height: 1.3em;
+    letter-spacing: 0.1em;
+  }
 
-    .cart-item span {
-        margin-left: 0px;
-        width: 200px;
-        font-size: 0.9em;
-    }
+  .bikes-container {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+  }
 
-    .cart-item button {
-        background-color: rgb(205, 26, 26);
-        color: white;
-        align-self: center;
-        font-size: 0.6em;
-        height: 30px;
-    }
+  .bike-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 50px;
+    align-self: center;
+  }
 
-    .contact-container {
-        margin: 0 auto;
-        width: 80%;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        font-family: 'Nunito', sans-serif;
-    }
+  .bike-grid-item span {
+    margin-left: 10px;
+    font-size: 1em;
+    font-family: "Nunito", sans-serif;
+  }
 
-    #input-name {
-        width: 300px;
-        height: 25px;
-        font-size: 1.2em;
-        padding-left: 5px;
-        margin-bottom: 15px;
-        font-family: monospace;
-    }
+  .bike-grid-item img {
+    width: 300px;
+    object-fit: contain;
+    align-self: flex-start;
+    cursor: pointer;
+  }
 
-    #input-email {
-        width: 300px;
-        height: 25px;
-        font-size: 1.2em;
-        padding-left: 5px;
-        margin-bottom: 15px;
-        font-family: monospace;
-    }
+  .bike-grid-item img:hover {
+    width: 302px;
+  }
 
-    #input-message {
-        font-size: 1.3em;
-    }
+  .bike-product-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: row;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.8em;
+  }
 
-    #contact-submit-btn {
-        margin-top: 10px;
-        width: 90px;
-        height: 25px;
-    }
+  .bike-product-container img {
+    width: 350px;
+    object-fit: contain;
+    align-self: center;
+    background-color: #f3f0f1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    .admin-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: column;
-    }
+  .bike-product-container span {
+    margin-left: 30px;
+    align-self: center;
+  }
 
-    .admin-container form {
-        margin: 0 auto;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .admin-container input {
-        margin-bottom: 10px;
-    }
+  .bike-product-container h2 {
+    margin-bottom: 10px;
+  }
 
-    .admin-homepage {
-        display: none;
-        flex-direction: column;
-        font-family: Arial, Helvetica, sans-serif
-    }
+  .bike-product-container h3,
+  h4 {
+    margin: 0;
+  }
 
-    .admin-homepage h2 {
-        text-align: center;
-        font-weight: bold;
-    }
+  .bike-product-container button {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: rgb(27, 177, 27);
+    color: white;
+  }
 
-    .admin-homepage ul {
-        margin: 0 auto;
-        list-style-type: none;
-        display: inline;
-    }
+  .accessories-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+  }
 
-    .admin-homepage li {
-        display: inline;
-        padding-left: 0;
-        margin-left: 10px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-    
-    .admin-homepage li:hover {
-        font-weight: bold;
-        text-decoration: underline;
-    }
+  .accessory-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 50px;
+    align-self: flex-end;
+  }
 
-    .admin-content {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
+  .accessory-grid-item span {
+    margin-left: 10px;
+    font-size: 1em;
+    font-family: "Nunito", sans-serif;
+  }
 
-    .bike-item {
-        margin: 10px auto;
-        min-width: 400px;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-grid-item img {
+    width: 160px;
+    object-fit: contain;
+    align-self: flex-start;
+    cursor: pointer;
+  }
 
-    .bike-item button {
-        margin-top: 5px;
-    }
+  .accessory-grid-item img:hover {
+    width: 162px;
+  }
 
-    .accessory-item {
-        margin: 10px auto;
-        min-width: 400px;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-product-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: row;
+    font-family: "Nunito", sans-serif;
+    justify-content: center;
+    font-size: 0.8em;
+  }
 
-    .accessory-item button {
-        margin-top: 5px;
-    }
+  .accessory-product-container img {
+    width: 250px;
+    object-fit: contain;
+    align-self: center;
+  }
 
-    .comment-item {
-        height: auto;
-        width: 600px;
-        margin: 0 auto;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-product-container span {
+    margin-left: 30px;
+    align-self: center;
+    width: 600px;
+  }
 
-    .comment-item p {
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    
-    .footer {
-        margin-top: 30px;
-        width: 100%;
-        height: 50px;
-        background-color: #2a4f9a;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-    
-    .footer span {
-        padding-bottom: 5px;
-    }
-    
-    .footer p {
-        margin: 0;
-        color: rgb(248, 248, 248);
-        font-size: 0.8em;
-        font-family: 'Nunito', sans-serif;
-    }
+  .accessory-product-container h2 {
+    margin-bottom: 10px;
+  }
+
+  .accessory-product-container h3,
+  h4 {
+    margin: 0;
+  }
+
+  .accessory-product-container button {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: rgb(27, 177, 27);
+    color: white;
+  }
+
+  .cart-container {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 500px;
+    display: none;
+    font-family: "Nunito", sans-serif;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+  }
+
+  .cart-container h1 {
+    margin-bottom: 40px;
+  }
+
+  .cart-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: flex-end;
+    width: 500px;
+  }
+
+  .cart-item img {
+    height: 150px;
+    min-width: 300px;
+    object-fit: contain;
+  }
+
+  .cart-item span {
+    margin-left: 0px;
+    width: 200px;
+    font-size: 0.9em;
+  }
+
+  .cart-item button {
+    background-color: rgb(205, 26, 26);
+    color: white;
+    align-self: center;
+    font-size: 0.6em;
+    height: 30px;
+  }
+
+  .contact-container {
+    margin: 0 auto;
+    width: 80%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Nunito", sans-serif;
+  }
+
+  #input-name {
+    width: 300px;
+    height: 25px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+  }
+
+  #input-email {
+    width: 300px;
+    height: 25px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+  }
+
+  #input-message {
+    font-size: 1.3em;
+  }
+
+  #contact-submit-btn {
+    margin-top: 10px;
+    width: 90px;
+    height: 25px;
+  }
+
+  .admin-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: column;
+  }
+
+  .admin-container form {
+    margin: 0 auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .admin-container input {
+    margin-bottom: 10px;
+  }
+
+  .admin-homepage {
+    display: none;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .admin-homepage h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .admin-homepage ul {
+    margin: 0 auto;
+    list-style-type: none;
+    display: inline;
+  }
+
+  .admin-homepage li {
+    display: inline;
+    padding-left: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .admin-homepage li:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .admin-content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .bike-item {
+    margin: 10px auto;
+    min-width: 400px;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .bike-item button {
+    margin-top: 5px;
+  }
+
+  .accessory-item {
+    margin: 10px auto;
+    min-width: 400px;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .accessory-item button {
+    margin-top: 5px;
+  }
+
+  .comment-item {
+    height: auto;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .comment-item p {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    background-color: #2a4f9a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .footer span {
+    padding-bottom: 5px;
+  }
+
+  .footer p {
+    margin: 0;
+    color: rgb(248, 248, 248);
+    font-size: 0.8em;
+    font-family: "Nunito", sans-serif;
+  }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 799px) {
-    body {
-        margin: 0;
-    }
-    
-    .top-bar {
-        background-color: #4267B2;
-        width: 100%;
-        height: 20px;
-        margin-left: 0px;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    .top-bar span {
-        align-self: flex-end;
-        margin-bottom: 5px;
-        margin-right: 10px;
-        color: white;
-        cursor: pointer;
-        font-family: 'Nunito', sans-serif;
-        font-size: 0.5em;
-    }
-    
-    .top-bar span:hover {
-        text-decoration: underline;
-    }
-    
-    .second-bar {
-        margin-bottom: 20px;
-        width: 100%;
-        height: 40px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .second-bar h1 {
-        margin-left: 10px;
-        color: #2a4f9a;
-        font-size: 0.8em;
-        font-family: 'Fugaz One', cursive;
-        align-self: center;
-    }
-    
-    .second-bar img {
-        margin-right: 5%;
-        width: 15px;
-        height: 12px;
-        align-self: center;
-        cursor: pointer;
-    }
+  body {
+    margin: 0;
+  }
 
-    .second-bar img:hover {
-        animation: cartShakeHover 0.5s;
-    }
+  .top-bar {
+    background-color: #4267b2;
+    width: 100%;
+    height: 20px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    @keyframes cartShakeHover {
-        0% {transform: rotate(0deg)}
-        20% {transform: rotate(10deg)}
-        50% {transform: rotate(0deg)}
-        80% {transform: rotate(-10deg)}
-        100% {transform: rotate(0deg)}
-    }
+  .top-bar span {
+    align-self: flex-end;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.5em;
+  }
 
-    @keyframes cartShake {
-        0% {transform: rotate(0deg)}
-        20%{transform: rotate(20deg) scale(1.2) }
-        25%{transform: rotate(0deg) scale(1.5) }
-        30% {transform: rotate(-20deg) scale(1.7)}
-        50% {transform: rotate(0deg) scale(2) }
-        70%{transform: rotate(20deg) scale(1.7) }
-        75%{transform: rotate(0deg) scale(1.5) }
-        80% {transform: rotate(-20deg) scale(1.2)}
-        100% {transform: rotate(0deg)}
-    }
-    
-    .navbar {
-        width: 55%;
-        max-width: 500px;
-    }
-    
-    .navbar ul {
-        padding-left: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    .navbar li {
-        margin-left: 0;
-        font-size: 0.4em;
-        font-family: 'Nunito', sans-serif;
-        cursor: pointer;
-    }
-    
-    .nav-button:hover {
-        color: #2a4f9a;
-        text-decoration: underline;
-    }
- 
-    .home-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-    }
-    
-    .home-container img {
-        height: 200px;
-        margin: 2%;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .home-container div {
-        margin-left: 10px;
-        width: 500px;
-        text-align: center;
-    }
-    
-    .home-container p {
-        text-align: center;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 0.7em;
-        line-height: 0.9em;
-        letter-spacing: 0.1em;
-    }
-    
-    .bikes-container {
-        margin: 0 auto;
-        width: 90%;
-        height: auto;
-        display: none;
-        grid-template-columns: 1fr;
-    }
-    
-    .bike-grid-item {
-        margin: 0 auto 40px auto;
-        height: auto;
-        width: 250px;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
+  .top-bar span:hover {
+    text-decoration: underline;
+  }
 
-    }
-    
-    .bike-grid-item span {
-        text-align: center;
-        margin-left: 10px;
-        font-size: 0.6em;
-        line-height: 1em;
-        font-family: 'Nunito', sans-serif;
-        margin-top: 0;
-    }
-    
-    .bike-grid-item img {
-        width: 200px;
-        object-fit: contain;
-        align-self: center;
-        cursor: pointer;
-        margin-bottom: 0;
-        justify-self: flex-end;
-    }
-    
-    .bike-grid-item img:hover {
-        width: 202px;
-    }
-    
-    .bike-product-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: column;
-        font-family: 'Nunito', sans-serif;
-        font-size: 0.3em
-    }
+  .second-bar {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
-    .bike-product-container img {
-        width: 150px;
-        object-fit: contain;
-        align-self: center;
-        background-color: #f3f0f1;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+  .second-bar h1 {
+    margin-left: 10px;
+    color: #2a4f9a;
+    font-size: 0.8em;
+    font-family: "Fugaz One", cursive;
+    align-self: center;
+  }
 
-    .bike-product-container span {
-        margin-left: 30px;
-        align-self: center;
-    }
+  .second-bar img {
+    margin-right: 5%;
+    width: 15px;
+    height: 12px;
+    align-self: center;
+    cursor: pointer;
+  }
 
-    .bike-product-container h2 {
-        margin-bottom: 10px;
-    }
-    
-    .bike-product-container h3, h4 {
-        margin: 0;
-    }
+  .second-bar img:hover {
+    animation: cartShakeHover 0.5s;
+  }
 
-    .bike-product-container button {
-        margin-bottom: 30px;
-        padding: 10px;
-        width: 100px;
-        height: 35px;
-        font-size: 0.6em;
-        font-weight: bold;
-        background-color: rgb(27, 177, 27);
-        color: white
+  @keyframes cartShakeHover {
+    0% {
+      transform: rotate(0deg);
     }
+    20% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    80% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
-    .accessories-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: space-around;
+  @keyframes cartShake {
+    0% {
+      transform: rotate(0deg);
     }
-    
-    .accessory-grid-item {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin-bottom: 50px;
-        align-self: flex-end;
+    20% {
+      transform: rotate(20deg) scale(1.2);
     }
-    
-    .accessory-grid-item span {
-        margin-left: 10px;
-        font-size: 0.6em;
-        font-family: 'Nunito', sans-serif;
+    25% {
+      transform: rotate(0deg) scale(1.5);
     }
-    
-    .accessory-grid-item img {
-        width: 80px;
-        object-fit: contain;
-        align-self: flex-start;
-        cursor: pointer;
+    30% {
+      transform: rotate(-20deg) scale(1.7);
     }
-    
-    .accessory-grid-item img:hover {
-       width: 82px;
+    50% {
+      transform: rotate(0deg) scale(2);
     }
+    70% {
+      transform: rotate(20deg) scale(1.7);
+    }
+    75% {
+      transform: rotate(0deg) scale(1.5);
+    }
+    80% {
+      transform: rotate(-20deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
-    .accessory-product-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: column;
-        font-family: 'Nunito', sans-serif;
-        justify-content: center;
-        font-size: 0.3em
-    }
+  .navbar {
+    width: 55%;
+    max-width: 500px;
+  }
 
-    .accessory-product-container img {
-        width: 120px;
-        object-fit: contain;
-        align-self: center;
-    }
+  .navbar ul {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-    .accessory-product-container span {
-        margin-left: 30px;
-        align-self: center;
-        width: auto;
-    }
+  .navbar li {
+    margin-left: 0;
+    font-size: 0.4em;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+  }
 
-    .accessory-product-container h2 {
-        margin-bottom: 10px;
-    }
-    
-    .accessory-product-container h3, h4 {
-        margin: 0;
-    }
+  .nav-button:hover {
+    color: #2a4f9a;
+    text-decoration: underline;
+  }
 
-    .accessory-product-container button {
-        margin-bottom: 30px;
-        padding: 10px;
-        width: 100px;
-        height: 35px;
-        font-size: 0.6em;
-        font-weight: bold;
-        background-color: rgb(27, 177, 27);
-        color: white
-    }
-    
-    .cart-container {
-        margin: 0 auto;
-        width: 80%;
-        min-height: 500px;
-        display: none;
-        font-family: 'Nunito', sans-serif;
-        flex-direction: column;
-        text-align: center;
-        align-content: center;
-        font-size: 0.3em;
-    }
+  .home-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
 
-    .cart-container h1 {
-        margin-bottom: 10px;
-    }
+  .home-container img {
+    height: 200px;
+    margin: 2%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
-    .cart-contents {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .home-container div {
+    margin-left: 10px;
+    width: 500px;
+    text-align: center;
+  }
 
-    .cart-item {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-        justify-content: flex-end;
-        width: 200px;
-    }
+  .home-container p {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.7em;
+    line-height: 0.9em;
+    letter-spacing: 0.1em;
+  }
 
-    .cart-item img {
-        height: 100px;
-        min-width: 200px;
-        object-fit: contain;
-    }
+  .bikes-container {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr;
+  }
 
-    .cart-item span {
-        margin-left: 0px;
-        width: 200px;
-        font-size: 0.9em;
-        line-height: 2em;
-    }
+  .bike-grid-item {
+    margin: 0 auto 40px auto;
+    height: auto;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
 
-    .cart-item button {
-        background-color: rgb(205, 26, 26);
-        color: white;
-        align-self: center;
-        font-size: 0.6em;
-        height: 20px;
-        margin-top: 5px;
-    }
+  .bike-grid-item span {
+    text-align: center;
+    margin-left: 10px;
+    font-size: 0.6em;
+    line-height: 1em;
+    font-family: "Nunito", sans-serif;
+    margin-top: 0;
+  }
 
-    .contact-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        font-family: 'Nunito', sans-serif;
-        font-size: 0.5em;
-    }
+  .bike-grid-item img {
+    width: 200px;
+    object-fit: contain;
+    align-self: center;
+    cursor: pointer;
+    margin-bottom: 0;
+    justify-self: flex-end;
+  }
 
-    #input-name {
-        width: 60px;
-        height: 10px;
-        font-size: 1.2em;
-        padding-left: 5px;
-        margin-bottom: 15px;
-        font-family: monospace;
-    }
+  .bike-grid-item img:hover {
+    width: 202px;
+  }
 
-    #input-email {
-        width: 80px;
-        height: 10px;
-        font-size: 1.2em;
-        padding-left: 5px;
-        margin-bottom: 15px;
-        font-family: monospace;
-    }
+  .bike-product-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.3em;
+  }
 
-    #input-message {
-        font-size: 1.3em;
-    }
+  .bike-product-container img {
+    width: 150px;
+    object-fit: contain;
+    align-self: center;
+    background-color: #f3f0f1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    #contact-submit-btn {
-        margin-top: 10px;
-        width: 60px;
-        height: 20px;
-        font-size: 0.5em;
-    }
+  .bike-product-container span {
+    margin-left: 30px;
+    align-self: center;
+  }
 
-    .admin-container {
-        margin: 0 auto;
-        width: 80%;
-        height: auto;
-        display: none;
-        flex-direction: column;
-    }
+  .bike-product-container h2 {
+    margin-bottom: 10px;
+  }
 
-    .admin-container form {
-        margin: 0 auto;
-        width: 200px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .admin-container input {
-        margin-bottom: 10px;
-    }
+  .bike-product-container h3,
+  h4 {
+    margin: 0;
+  }
 
-    .admin-homepage {
-        display: none;
-        flex-direction: column;
-        font-family: Arial, Helvetica, sans-serif
-    }
+  .bike-product-container button {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 100px;
+    height: 35px;
+    font-size: 0.6em;
+    font-weight: bold;
+    background-color: rgb(27, 177, 27);
+    color: white;
+  }
 
-    .admin-homepage h2 {
-        text-align: center;
-        font-weight: bold;
-    }
+  .accessories-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+  }
 
-    .admin-homepage ul {
-        margin: 0 auto;
-        list-style-type: none;
-        display: inline;
-    }
+  .accessory-grid-item {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 50px;
+    align-self: flex-end;
+  }
 
-    .admin-homepage li {
-        display: inline;
-        padding-left: 0;
-        margin-left: 10px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-    
-    .admin-homepage li:hover {
-        font-weight: bold;
-        text-decoration: underline;
-    }
+  .accessory-grid-item span {
+    margin-left: 10px;
+    font-size: 0.6em;
+    font-family: "Nunito", sans-serif;
+  }
 
-    .admin-content {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
+  .accessory-grid-item img {
+    width: 80px;
+    object-fit: contain;
+    align-self: flex-start;
+    cursor: pointer;
+  }
 
-    .bike-item {
-        margin: 10px auto;
-        min-width: 400px;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-grid-item img:hover {
+    width: 82px;
+  }
 
-    .bike-item button {
-        margin-top: 5px;
-    }
+  .accessory-product-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    font-family: "Nunito", sans-serif;
+    justify-content: center;
+    font-size: 0.3em;
+  }
 
-    .accessory-item {
-        margin: 10px auto;
-        min-width: 400px;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-product-container img {
+    width: 120px;
+    object-fit: contain;
+    align-self: center;
+  }
 
-    .accessory-item button {
-        margin-top: 5px;
-    }
+  .accessory-product-container span {
+    margin-left: 30px;
+    align-self: center;
+    width: auto;
+  }
 
-    .comment-item {
-        height: auto;
-        width: 600px;
-        margin: 0 auto;
-        padding: 10px;
-        background-color: rgb(232, 232, 232);
-        border: 1px solid black;
-    }
+  .accessory-product-container h2 {
+    margin-bottom: 10px;
+  }
 
-    .comment-item p {
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    
-    .footer {
-        margin-top: 30px;
-        width: 100%;
-        height: 30px;
-        background-color: #2a4f9a;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-    
-    .footer span {
-        padding-bottom: 5px;
-    }
-    
-    .footer p {
-        margin: 0;
-        color: rgb(248, 248, 248);
-        font-size: 0.3em;
-        font-family: 'Nunito', sans-serif;
-    }
+  .accessory-product-container h3,
+  h4 {
+    margin: 0;
+  }
+
+  .accessory-product-container button {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 100px;
+    height: 35px;
+    font-size: 0.6em;
+    font-weight: bold;
+    background-color: rgb(27, 177, 27);
+    color: white;
+  }
+
+  .cart-container {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 500px;
+    display: none;
+    font-family: "Nunito", sans-serif;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    font-size: 0.3em;
+  }
+
+  .cart-container h1 {
+    margin-bottom: 10px;
+  }
+
+  .cart-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+    width: 200px;
+  }
+
+  .cart-item img {
+    height: 100px;
+    min-width: 200px;
+    object-fit: contain;
+  }
+
+  .cart-item span {
+    margin-left: 0px;
+    width: 200px;
+    font-size: 0.9em;
+    line-height: 2em;
+  }
+
+  .cart-item button {
+    background-color: rgb(205, 26, 26);
+    color: white;
+    align-self: center;
+    font-size: 0.6em;
+    height: 20px;
+    margin-top: 5px;
+  }
+
+  .contact-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.5em;
+  }
+
+  #input-name {
+    width: 60px;
+    height: 10px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+  }
+
+  #input-email {
+    width: 80px;
+    height: 10px;
+    font-size: 1.2em;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    font-family: monospace;
+  }
+
+  #input-message {
+    font-size: 1.3em;
+  }
+
+  #contact-submit-btn {
+    margin-top: 10px;
+    width: 60px;
+    height: 20px;
+    font-size: 0.5em;
+  }
+
+  .admin-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: none;
+    flex-direction: column;
+  }
+
+  .admin-container form {
+    margin: 0 auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .admin-container input {
+    margin-bottom: 10px;
+  }
+
+  .admin-homepage {
+    display: none;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .admin-homepage h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .admin-homepage ul {
+    margin: 0 auto;
+    list-style-type: none;
+    display: inline;
+  }
+
+  .admin-homepage li {
+    display: inline;
+    padding-left: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .admin-homepage li:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .admin-content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .bike-item {
+    margin: 10px auto;
+    min-width: 400px;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .bike-item button {
+    margin-top: 5px;
+  }
+
+  .accessory-item {
+    margin: 10px auto;
+    min-width: 400px;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .accessory-item button {
+    margin-top: 5px;
+  }
+
+  .comment-item {
+    height: auto;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgb(232, 232, 232);
+    border: 1px solid black;
+  }
+
+  .comment-item p {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .footer {
+    margin-top: 30px;
+    width: 100%;
+    height: 30px;
+    background-color: #2a4f9a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .footer span {
+    padding-bottom: 5px;
+  }
+
+  .footer p {
+    margin: 0;
+    color: rgb(248, 248, 248);
+    font-size: 0.3em;
+    font-family: "Nunito", sans-serif;
+  }
 }
