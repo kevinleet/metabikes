@@ -30,7 +30,7 @@ Leave a comment.
 ## Modules 
 
 <details>
-    <summery>Bike</summery>
+    <summary>Bike</summary>
 
      
     The Bike model stores all fields of data that might be relavent to a potential shopper. It is the parent to our cartitem object and contains the fields: 
