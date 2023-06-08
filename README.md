@@ -39,8 +39,8 @@ Leave a comment.
     description: String
     img: String
     category: String 
-
-</detals>
+s
+</bike>
 
 <accessories>
     <summery>###accessory</summery>
