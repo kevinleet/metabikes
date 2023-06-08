@@ -1,109 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script defer src="./script.js"></script>
     <title>Meta Bikes</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="top-bar">
-        <span id="admin-login-btn">ADMIN LOGIN</span>
+      <span id="admin-login-btn">ADMIN LOGIN</span>
     </div>
 
     <div class="second-bar">
-        <h1>META BIKES</h1>
-        <div class="navbar">
-            <ul>
-                <li class="nav-button" id="nav-home-btn">HOME</li>
-                <li class="nav-button" id="nav-bikes-btn">BIKES</li>
-                <li class="nav-button" id="nav-accessories-btn">ACCESSORIES</li>
-                <li class="nav-button" id="nav-contact-btn">CONTACT US</li>
-            </ul>
-        </div>
-        <img id="cart-img" src="./imgs/cart.png"/>
+      <h1>META BIKES</h1>
+      <div class="navbar">
+        <ul>
+          <li class="nav-button" id="nav-home-btn">HOME</li>
+          <li class="nav-button" id="nav-bikes-btn">BIKES</li>
+          <li class="nav-button" id="nav-accessories-btn">ACCESSORIES</li>
+          <li class="nav-button" id="nav-contact-btn">CONTACT US</li>
+        </ul>
+      </div>
+      <img id="cart-img" src="./imgs/cart.png" />
     </div>
 
-    
     <div class="container-wrapper">
-        <div class="home-container">
-            <img src="./imgs/zucker_bikes.png"/>
-            <div>
-                <p style="font-weight: bold">Welcome to Meta Bikes!</p>
-                <p>We are Silicon Valley's most prestigious bicycle shop, catering to only high net-worth individuals and tech company founders.</p>
-            </div>
+      <div class="home-container">
+        <img src="./imgs/zucker_bikes.png" />
+        <div>
+          <p style="font-weight: bold">Welcome to Meta Bikes!</p>
+          <p>
+            We are Silicon Valley's most prestigious bicycle shop, catering to
+            only high net-worth individuals and tech company founders.
+          </p>
         </div>
+      </div>
 
-        <div class="bikes-container"></div>
+      <div class="bikes-container"></div>
 
-        <div class="bike-product-container"></div>
+      <div class="bike-product-container"></div>
 
-        <div class="accessories-container"></div>
+      <div class="accessories-container"></div>
 
-        <div class="accessory-product-container"></div>
+      <div class="accessory-product-container"></div>
 
-        <div class="cart-container">
-            <h1>Your Shopping Cart</h1>
-            <div class="cart-contents">
+      <div class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        <div class="cart-contents"></div>
+      </div>
 
-            </div>
+      <div class="contact-container">
+        <h2>Contact us below. Our average response time is 2 business days.</h2>
+        <div class="input-div">
+          <input id="input-name" placeholder="Name" />
+          <br />
+          <input id="input-email" placeholder="Email Address" />
+          <br />
+          <textarea
+            id="input-message"
+            name="input-message"
+            rows="7"
+            cols="60"
+            placeholder="Enter your message here..."
+          ></textarea>
+          <br />
         </div>
+        <button type="submit" id="contact-submit-btn">Submit</button>
+        <p id="please-fill" style="color: red; display: none">
+          Please fill out all required fields.
+        </p>
+      </div>
 
-        <div class="contact-container">
-            <h2>Contact us below. Our average response time is 2 business days.</h2>
-            <div class="input-div">
-                <input id="input-name" placeholder="Name">
-                <br>
-                <input id="input-email" placeholder="Email Address">
-                <br>
-                <textarea id="input-message" name="input-message" rows="7" cols="60" placeholder="Enter your message here..."></textarea>
-                <br>
-            </div>
-            <button type="submit" id="contact-submit-btn">Submit</button>
-            <p id="please-fill" style="color: red; display: none;">Please fill out all required fields.</p>
+      <div class="admin-container">
+        <form class="login-form" onsubmit="return false">
+          <label>Admin Login</label>
+          <br />
+          <input type="text" id="admin-username-input" placeholder="Username" />
+          <input
+            type="password"
+            id="admin-password-input"
+            placeholder="Password"
+          />
+          <button id="admin-login-submit">Submit</button>
+          <p id="invalid-login" style="display: none; color: red">
+            Invalid login credentials.
+          </p>
+        </form>
+        <div class="admin-homepage">
+          <h2>ADMIN CONTROL PANEL</h2>
+          <ul>
+            <li id="nav-manage-bikes">MANAGE BIKES</li>
+            <li id="nav-manage-accessories">MANAGE ACCESSORIES</li>
+            <li id="nav-read-comments">READ MESSAGES</li>
+          </ul>
+          <div class="admin-content"></div>
         </div>
-
-        <div class="admin-container">
-            <form class="login-form" onsubmit="return false">
-                <label>Admin Login</label>
-                <br>
-                <input type="text" id="admin-username-input" placeholder="Username">
-                <input type="password" id="admin-password-input" placeholder="Password">
-                <button id="admin-login-submit">Submit</button>
-                <p id="invalid-login" style="display: none; color: red;">Invalid login credentials.</p>
-            </form>
-            <div class="admin-homepage">
-                <h2>ADMIN CONTROL PANEL</h2>
-                <ul>
-                    <li id="nav-manage-bikes">MANAGE BIKES</li>
-                    <li id="nav-manage-accessories">MANAGE ACCESSORIES</li>
-                    <li id="nav-read-comments">READ MESSAGES</li>
-                </ul>
-                <div class="admin-content">
-
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-
-
-
 
     <div class="footer">
-        <span>
-            <p>© Meta Bikes 2023</p>
-            <p>Developed By: Andrew Mullins, Daniel Mulka, Kevin Li</p>
-        </span>
+      <span>
+        <p>© Meta Bikes 2023</p>
+        <p>Developed By: Andrew Mullins, Daniel Mulka, Kevin Li</p>
+      </span>
     </div>
-
-</body>
+  </body>
 </html>
