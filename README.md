@@ -2,90 +2,94 @@
 
 ---
 
-Zuckerberg's very own e-commerce site specializing in high end bicycles and accessories.
+Zuckerberg's very own e-commerce site specializing in high-end bicycles and accessories.
 
-![logo](./client/imgs/logo.png)
+## Project Overview
 
+MetaBikes is a multi-page, full-stack, CRUD capable e-commerce site. It allows users to navigate through the site's inventory of bikes and accessories, view item details, add items to the cart, and leave comments.
 
-## Project 
-MetaBikes is a multi-page, full-stack, CRUD capable e-commerce site. 
-![Meta Bikes Landing Page](./client/imgs/landing.png)
+![Meta Bikes Landing Page](https://github.com/kevinleet/metabikes/raw/main/client/imgs/landing.png)
 
-## Functionality 
+## Team
 
-Navigate through the site's inventory of bikes and accessories.  
+- Kevin Li: Front-end development
+- Andrew Mullins: Routes and controllers
+- Daniel Mulka: Models, schemas, and data seeding
 
-Click on any item you are interested in to get more info. 
+## Modules
 
-Add and remove items from the cart.
+### Bike
 
-Leave a comment. 
+The `Bike` model stores all the relevant fields of data for potential shoppers. It is the parent object for the `CartItem` and contains the following fields:
 
+- `type`: String
+- `brand`: String
+- `model`: String
+- `price`: Number
+- `color`: String
+- `weight`: Number
+- `description`: String
+- `img`: String
+- `category`: String
 
-## Team 
-- Kevin Li
-- Andrew Mullins
-- Daniel Mulka
+### Accessory
 
-## Modules 
+The `Accessory` model stores all the relevant data for accessories. It is also a parent object for the `CartItem` and includes the following fields:
 
-<details>
-    <summary>Bike</summary>
+- `type`: String
+- `brand`: String
+- `item`: String
+- `price`: Number
+- `img`: String
+- `description`: String
+- `category`: String
 
-     
-    The Bike model stores all fields of data that might be relavent to a potential shopper. It is the parent to our cartitem object and contains the fields: 
-    - type: String
-    - brand: String
-    - model: String
-    - price: Number
-    - color: String
-    - weight: Number
-    - description: String
-    - img: String
-    - category: String 
+### CartItem
 
-<details>
+The `CartItem` model represents items in the shopping cart and has a many-to-one relationship with both `Bike` and `Accessory` models. It includes the following fields:
 
-<details>
-    <summary>Accessory</summary>
+- `bicycleID`: ID of the bike
+- `accessoryID`: ID of the accessory
+- `quantity`: Number
 
-    
-     Accessories like bikes, stores all the data a shopper will need to know and is also a parent to cartitem. Accessories fields are:
-    - type: String 
-    - brand: String
-    - item: String
-    - price: Number
-    - img: String
-    - description: String 
-    - category: String 
-     
+### Comment
 
-</details>
+The `Comment` model allows shoppers to leave comments about the page. It includes the following fields:
 
-<details>
-    <summary>Cartitem</summary>
+- `name`: String
+- `email`: String
+- `description`: String
 
+## Code Analysis
 
-     The cartitem model is the child of both bike and accessory in a many to one relationship. Takes the ID of any bike or accessory and displays them in the cart. Fields are: 
-   - bicycleID : bike id 
-   - accessoryID: accessory id 
-   - quantity : Number 
+The code consists of several JavaScript classes and functions responsible for creating dynamic content and handling user interactions. It utilizes Axios for making HTTP requests to the server-side API.
 
+The codebase is divided into the following classes:
 
-</details>
+- `Bike`: Represents a bike item with methods for creating div elements, product pages, and cart items.
+- `Accessory`: Represents an accessory item with similar methods as the `Bike` class.
+- `formatNumberWithDollar`: Utility function to format a number as a dollar amount.
+- Event listeners and handlers for navigation, fetching data, generating product pages, managing the cart, submitting comments, and admin login.
 
-<details>
-    <summary>Comment</summary>
+The code follows best practices and is well-structured, allowing for easy maintenance and extension.
 
+## Getting Started
 
-    Finally the comment mode allows shoppers to leave comments about the page. It takes thestrings generated on the front end to display messages on the admin page. Fields displayed. 
-  - name: String 
-  - email : String
-  - description : String 
-     
-</details>
+To run the Meta Bikes e-commerce site locally, follow these steps:
 
+1. Clone the repository: `git clone https://github.com/your-username/meta-bikes.git`
+2. Install the dependencies: `npm install`
+3. Start the server: `npm start`
+4. Open your web browser and visit `http://localhost:3000`
 
+Make sure you have Node.js and MongoDB installed on your machine.
 
+## Contributing
 
+We welcome contributions from everyone! If you would like to contribute to the Meta Bikes project, please follow these steps:
 
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b my-new-feature`
+3. Make your changes and commit them: `git commit -am 'Add some feature'`
+4. Push the branch to your fork: `git push origin my-new-feature`
+5. Submit a pull request.
