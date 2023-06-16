@@ -1,9 +1,5 @@
 # META BIKES
 
----
-
-Zuckerberg's very own e-commerce site specializing in high-end bicycles and accessories.
-
 ## Project Overview
 
 MetaBikes is a multi-page, full-stack, CRUD capable e-commerce site. It allows users to navigate through the site's inventory of bikes and accessories, view item details, add items to the cart, and leave comments.
