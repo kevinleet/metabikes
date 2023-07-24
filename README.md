@@ -6,10 +6,6 @@ MetaBikes is a multi-page, full-stack, CRUD capable e-commerce site. It allows u
 
 ![Meta Bikes Landing Page](https://github.com/kevinleet/metabikes/raw/main/client/imgs/landing.png)
 
-## Deployment
-
-The Meta Bikes project is deployed and accessible at: [https://metabikes-production.up.railway.app/](https://metabikes-production.up.railway.app/)
-
 ## Team
 
 - Kevin Li: Front-end development
